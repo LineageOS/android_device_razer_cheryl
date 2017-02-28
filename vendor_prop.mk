@@ -77,6 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
     ro.sf.lcd_density=560 \
+    vendor.display.disable_partial_split=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
