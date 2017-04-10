@@ -28,6 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bt.a2dp_offload_cap=sbc-aac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
     ro.af.client_heap_size_kbyte=7168 \
+    ro.audio.monitorRotation=true \
     ro.config.alarm_vol_default=10 \
     ro.config.alarm_vol_steps=16 \
     ro.config.media_vol_default=7 \
