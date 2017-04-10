@@ -610,6 +610,9 @@
     <ctl name="QUAT_MI2S_TX Format" value="S16_LE" />
     <ctl name="QUAT_MI2S_TX Channels" value="One" />
 
+    <!-- Speaker swap -->
+    <ctl name="Swap channel" value="0" />
+
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="gsm-mode">
         <ctl name="GSM mode Enable" value="ON" />
@@ -2241,8 +2244,18 @@
         <ctl name="IIR0 INP0 MUX" value="DEC7" />
     </path>
 
-    <path name="speaker">
+    <path name="speaker-common">
         <ctl name="QUAT_MI2S_RX Format" value="S24_LE" />
+    </path>
+
+    <path name="speaker">
+        <path name="speaker-common" />
+        <ctl name="Swap channel" value="0" />
+    </path>
+
+    <path name="speaker-reverse">
+        <path name="speaker-common" />
+        <ctl name="Swap channel" value="1" />
     </path>
 
     <path name="speaker-fluid">
