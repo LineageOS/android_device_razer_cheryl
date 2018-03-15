@@ -178,16 +178,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Network manager
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.data.iwlan.enable=true \
-    persist.data.netmgrd.qos.enable=true \
-    persist.data.wda.enable=true \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.ul_mode=5
+    persist.vendor.data.iwlan.enable=true
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -202,7 +193,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rmnet.data.enable=true \
     persist.vendor.data.mode=concurrent \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
