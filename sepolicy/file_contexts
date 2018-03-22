@@ -4,9 +4,6 @@
 # CNE
 /data/connectivity(/.*)?                                      u:object_r:cnd_core_data_file:s0
 
-# DRM
-/vendor/bin/hw/android\.hardware\.drm@1\.0-service\.widevine  u:object_r:hal_drm_widevine_exec:s0
-
 # Fingerprint
 /sys/devices/soc/soc:fpc1020(/.*)?                            u:object_r:fingerprint_sysfs:s0
 
