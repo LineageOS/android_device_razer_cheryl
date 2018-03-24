@@ -53,6 +53,9 @@ on post-fs-data
     # Create folder for mm-qcamera-daemon
     mkdir /data/misc/camera 0770 camera camera
 
+    # Create folder of camera
+    mkdir /data/vendor/camera 0770 camera camera
+
     # Create directories for tombstones
     mkdir /data/tombstones/modem 0771 system system
     mkdir /data/tombstones/lpass 0771 system system
