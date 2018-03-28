@@ -144,16 +144,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.mode=concurrent \
-    persist.radio.apm_sim_not_pwdn=1 \
     persist.rmnet.data.enable=true \
+    persist.vendor.data.mode=concurrent \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=20 \
-    ro.use_data_netmgrd=true \
+    ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1 \
     vendor.voice.path.for.pcm.voip=false
 
