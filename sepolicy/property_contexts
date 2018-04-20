@@ -9,6 +9,3 @@ qc.izat.                                                      u:object_r:locatio
 
 # Netmgrd
 persist.net.doxlat                                            u:object_r:vendor_xlat_prop:s0
-
-# Qseecomd
-sys.listeners.registered                                      u:object_r:vendor_tee_listener_prop:s0
