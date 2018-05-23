@@ -98,11 +98,11 @@ on post-fs-data
     mkdir /data/vendor/location/xtwifi 0770 gps gps
 
     # SSC/SLPI sensors
-    mkdir /persist/sensors 0775 root system
-    chown root system /persist/sensors/sensors_settings
-    chmod 0664 /persist/sensors/sensors_settings
-    chown root system /persist/sensors/sns.reg
-    chmod 0664 /persist/sensors/sns.reg
+    mkdir /mnt/vendor/persist/sensors 0775 root system
+    chown root system /mnt/vendor/persist/sensors/sensors_settings
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+    chown root system /mnt/vendor/persist/sensors/sns.reg
+    chmod 0664 /mnt/vendor/persist/sensors/sns.reg
 
     setprop vold.post_fs_data_done 1
 
