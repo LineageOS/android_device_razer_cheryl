@@ -18,6 +18,8 @@ BOARD_VENDOR := razer
 
 DEVICE_PATH := device/razer/cheryl
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
