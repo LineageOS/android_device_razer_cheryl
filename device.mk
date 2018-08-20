@@ -157,7 +157,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msm8998 \
     libcutils \
-    libgptutils \
+    libgptutils.cheryl.recovery \
     libz
 
 # Camera
