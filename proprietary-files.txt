@@ -610,7 +610,7 @@ vendor/lib/libvqzip.so
 -vendor/lib64/libgpustats.so
 
 # NFC firmware
-vendor/firmware/libpn548ad_fw.so
+vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
