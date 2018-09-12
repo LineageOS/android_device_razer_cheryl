@@ -1,9 +1,6 @@
 # Fingerprint
 type fingerprint_sysfs, sysfs_type, fs_type;
 
-# NFC
-type nfc_vendor_data_file, file_type, data_file_type;
-
 # Power
 type debugfs_wlan, debugfs_type, fs_type;
 type sysfs_touchpanel, sysfs_type, fs_type;
