@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2014, 2016-2017 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2014, 2016-2018 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -33,7 +33,7 @@
 #include <inttypes.h>
 #include <LocApiBase.h>
 #include <LocAdapterBase.h>
-#include <platform_lib_log_util.h>
+#include <log_util.h>
 #include <LocDualContext.h>
 
 namespace loc_core {
@@ -107,19 +107,16 @@ struct LocSsrMsg : public LocMsg {
 
 struct LocOpenMsg : public LocMsg {
     LocApiBase* mLocApi;
-    LOC_API_ADAPTER_EVENT_MASK_T mMask;
-    inline LocOpenMsg(LocApiBase* locApi,
-                      LOC_API_ADAPTER_EVENT_MASK_T mask) :
-        LocMsg(), mLocApi(locApi), mMask(mask)
+    inline LocOpenMsg(LocApiBase* locApi) :
+            LocMsg(), mLocApi(locApi)
     {
         locallog();
     }
     inline virtual void proc() const {
-        mLocApi->open(mMask);
+        mLocApi->open(mLocApi->getEvtMask());
     }
     inline void locallog() const {
-        LOC_LOGV("%s:%d]: LocOpen Mask: %x\n",
-                 __func__, __LINE__, mMask);
+        LOC_LOGv("LocOpen Mask: %" PRIx64 "\n", mLocApi->getEvtMask());
     }
     inline virtual void log() const {
         locallog();
@@ -163,8 +160,7 @@ void LocApiBase::addAdapter(LocAdapterBase* adapter)
     for (int i = 0; i < MAX_ADAPTERS && mLocAdapters[i] != adapter; i++) {
         if (mLocAdapters[i] == NULL) {
             mLocAdapters[i] = adapter;
-            mMsgTask->sendMsg(new LocOpenMsg(this,
-                                             (adapter->getEvtMask())));
+            mMsgTask->sendMsg(new LocOpenMsg(this));
             break;
         }
     }
@@ -200,7 +196,7 @@ void LocApiBase::removeAdapter(LocAdapterBase* adapter)
                 close();
             } else {
                 // else we need to remove the bit
-                mMsgTask->sendMsg(new LocOpenMsg(this, getEvtMask()));
+                mMsgTask->sendMsg(new LocOpenMsg(this));
             }
         }
     }
@@ -208,7 +204,7 @@ void LocApiBase::removeAdapter(LocAdapterBase* adapter)
 
 void LocApiBase::updateEvtMask()
 {
-    mMsgTask->sendMsg(new LocOpenMsg(this, getEvtMask()));
+    open(getEvtMask());
 }
 
 void LocApiBase::handleEngineUpEvent()
@@ -264,6 +260,12 @@ void LocApiBase::reportWwanZppFix(LocGpsLocation &zppLoc)
     TO_1ST_HANDLING_LOCADAPTERS(mLocAdapters[i]->reportWwanZppFix(zppLoc));
 }
 
+void LocApiBase::reportOdcpiRequest(OdcpiRequestInfo& request)
+{
+    // loop through adapters, and deliver to the first handling adapter.
+    TO_1ST_HANDLING_LOCADAPTERS(mLocAdapters[i]->reportOdcpiRequestEvent(request));
+}
+
 void LocApiBase::reportSv(GnssSvNotification& svNotify)
 {
     const char* constellationString[] = { "Unknown", "GPS", "SBAS", "GLONASS",
@@ -279,7 +281,7 @@ void LocApiBase::reportSv(GnssSvNotification& svNotify)
             sizeof(constellationString) / sizeof(constellationString[0]) - 1) {
             svNotify.gnssSvs[i].type = GNSS_SV_TYPE_UNKNOWN;
         }
-        LOC_LOGV("   %03zu: %*s  %02d    %f    %f    %f   0x%02X",
+        LOC_LOGV("   %03zu: %*s  %02d    %f    %f    %f    %f    0x%02X",
             i,
             13,
             constellationString[svNotify.gnssSvs[i].type],
@@ -287,6 +289,7 @@ void LocApiBase::reportSv(GnssSvNotification& svNotify)
             svNotify.gnssSvs[i].cN0Dbhz,
             svNotify.gnssSvs[i].elevation,
             svNotify.gnssSvs[i].azimuth,
+            svNotify.gnssSvs[i].carrierFrequencyHz,
             svNotify.gnssSvs[i].gnssSvOptionsMask);
     }
     // loop through adapters, and deliver to all adapters.
@@ -438,6 +441,10 @@ DEFAULT_IMPL(LOC_API_ADAPTER_ERR_SUCCESS)
 
 enum loc_api_adapter_err LocApiBase::
     injectPosition(double /*latitude*/, double /*longitude*/, float /*accuracy*/)
+DEFAULT_IMPL(LOC_API_ADAPTER_ERR_SUCCESS)
+
+enum loc_api_adapter_err LocApiBase::
+    injectPosition(const Location& /*location*/)
 DEFAULT_IMPL(LOC_API_ADAPTER_ERR_SUCCESS)
 
 enum loc_api_adapter_err LocApiBase::
