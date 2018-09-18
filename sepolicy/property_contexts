@@ -1,6 +1,9 @@
 # Alarm
 ro.alarm_boot                                                 u:object_r:vendor_alarm_boot_prop:s0
 
+# Camera
+persist.camera.                                               u:object_r:camera_prop:s0
+
 # IMS
 ctl.imsrcsd                                                   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
