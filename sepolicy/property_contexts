@@ -1,2 +1,5 @@
 # IMS
-ctl.imsrcsd u:object_r:ctl_vendor_imsrcsservice_prop:s0
+ctl.imsrcsd                                                   u:object_r:ctl_vendor_imsrcsservice_prop:s0
+
+# Qseecomd
+sys.listeners.registered                                      u:object_r:vendor_tee_listener_prop:s0
