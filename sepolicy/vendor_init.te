@@ -4,5 +4,6 @@ allow vendor_init {
     camera_data_file
     cnd_core_data_file
     data_rfs_shared_hlos_file
+    system_data_file
     tombstone_data_file
 }:dir create_dir_perms;
