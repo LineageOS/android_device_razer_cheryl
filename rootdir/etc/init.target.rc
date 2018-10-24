@@ -146,9 +146,6 @@ on init
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 131072
 
 on fs
-    # Start HW service manager early
-    start hwservicemanager
-
     mount_all /vendor/etc/fstab.qcom --early
     #swapon_all /vendor/etc/fstab.qcom
 
