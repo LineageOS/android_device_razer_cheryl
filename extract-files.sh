@@ -77,6 +77,9 @@ function blob_fixup() {
     vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc)
         sed -i "/ disabled/Q" "${2}"
         ;;
+    vendor/lib/libaudcal.so)
+        sed -i "s|\/data\/vendor\/misc\/audio\/acdbdata\/delta\/|\/data\/vendor\/audio\/acdbdata\/delta\/\x00\x00\x00\x00\x00|g" "${2}"
+        ;;
     esac
 }
 
