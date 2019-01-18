@@ -129,7 +129,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=0 \
     persist.metadata_dynfps.disable=1 \
     ro.opengles.version=196610 \
-    ro.sf.lcd_density=560 \
     ro.vendor.display.cabl=0 \
     vendor.display.disable_partial_split=1 \
     vendor.display.disable_rotator_downscale=1 \
