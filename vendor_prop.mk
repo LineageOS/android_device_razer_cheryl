@@ -112,7 +112,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
-    vendor.camera.aux.packagelist=com.razer.camera,org.lineageos.snap,com.razerzone.camera \
     vidc.enc.dcvs.extra-buff-count=2
 
 # CNE
@@ -237,10 +236,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
-
-# Voice assistant
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opa.eligible_device=true
 
 # Widevine
 PRODUCT_PROPERTY_OVERRIDES += \
