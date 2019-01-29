@@ -1,0 +1,11 @@
+/system          ext4              /dev/block/bootdevice/by-name/system     flags=slotselect
+/system_image    emmc              /dev/block/bootdevice/by-name/system     flags=slotselect
+/vendor          ext4              /dev/block/bootdevice/by-name/vendor     flags=slotselect;backup=1;display="Vendor"
+/vendor_image    emmc              /dev/block/bootdevice/by-name/vendor     flags=slotselect
+/data            ext4              /dev/block/bootdevice/by-name/userdata   flags=encryptable=footer;length=-16384
+/persist         ext4              /dev/block/bootdevice/by-name/persist    flags=backup=1;display="Persist"
+/boot            emmc              /dev/block/bootdevice/by-name/boot       flags=slotselect
+/misc            emmc              /dev/block/bootdevice/by-name/misc
+
+/external_sd     vfat              /dev/block/mmcblk0p1 /dev/block/mmcblk0  flags=removable;storage;wipeingui;display="Micro SDCard"
+/usb-otg         vfat              /dev/block/sdg1      /dev/block/sdg      flags=removable;storage;wipeingui;display="USB OTG"

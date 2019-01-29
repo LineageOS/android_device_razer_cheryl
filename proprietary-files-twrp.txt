@@ -1,0 +1,13 @@
+# Bootctl
+vendor/lib64/hw/bootctrl.msm8998.so:recovery/root/vendor/lib64/hw/bootctrl.msm8998.so
+vendor/lib64/librecovery_updater_msm.so:recovery/root/vendor/lib64/librecovery_updater_msm.so
+
+# DRM
+vendor/bin/qseecomd:recovery/root/sbin/qseecomd
+vendor/lib64/hw/keystore.msm8998.so:recovery/root/vendor/lib64/hw/keystore.msm8998.so
+vendor/lib64/libQSEEComAPI.so:recovery/root/vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libdiag.so:recovery/root/vendor/lib64/libdiag.so
+vendor/lib64/libdrmfs.so:recovery/root/vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so:recovery/root/vendor/lib64/libdrmtime.so
+vendor/lib64/librpmb.so:recovery/root/vendor/lib64/librpmb.so
+vendor/lib64/libssd.so:recovery/root/vendor/lib64/libssd.so
