@@ -4,6 +4,9 @@ ro.alarm_boot                                                 u:object_r:vendor_
 # IMS
 ctl.imsrcsd                                                   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
+# MPCTL
+sys.post_boot.parsed                                          u:object_r:vendor_mpctl_prop:s0
+
 # Netmgrd
 persist.net.doxlat                                            u:object_r:vendor_xlat_prop:s0
 
