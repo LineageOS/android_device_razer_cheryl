@@ -4,6 +4,7 @@ cpp.set.clock                     u:object_r:camera_prop:s0
 disable.cpp.power.collapse        u:object_r:camera_prop:s0
 persist.camera.                   u:object_r:camera_prop:s0
 persist.dualcam.                  u:object_r:camera_prop:s0
+ro.camera.                        u:object_r:camera_prop:s0
 ubwc.no.compression               u:object_r:camera_prop:s0
 vidc.enc.dcvs.extra-buff-count    u:object_r:camera_prop:s0
 video.disable.ubwc                u:object_r:camera_prop:s0
