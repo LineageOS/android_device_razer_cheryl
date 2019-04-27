@@ -20,4 +20,8 @@
          the sensor embedded in the power key and listening all the time
          causes a poor experience. -->
     <bool name="config_fingerprintWakeAndUnlock">false</bool>
+
+    <!-- Max visible notification icons -->
+    <integer name="config_maxVisibleNotificationIcons">6</integer>
+    <integer name="config_maxVisibleNotificationIconsWhenDark">7</integer>
 </resources>
