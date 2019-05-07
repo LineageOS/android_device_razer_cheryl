@@ -59,6 +59,14 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
 
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
