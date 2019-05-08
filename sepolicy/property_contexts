@@ -1,11 +1,2 @@
 # Camera
 persist.camera.                                               u:object_r:camera_prop:s0
-
-# IMS
-ctl.imsrcsd                                                   u:object_r:ctl_vendor_imsrcsservice_prop:s0
-
-# Location
-qc.izat.                                                      u:object_r:location_prop:s0
-
-# Netmgrd
-persist.net.doxlat                                            u:object_r:vendor_xlat_prop:s0
