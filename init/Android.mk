@@ -24,7 +24,7 @@ LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
 LOCAL_CPPFLAGS := -Wall
-LOCAL_SRC_FILES := init_msm8998.cpp
-LOCAL_MODULE := libinit_msm8998
+LOCAL_SRC_FILES := init_cheryl.cpp
+LOCAL_MODULE := libinit_cheryl
 
 include $(BUILD_STATIC_LIBRARY)

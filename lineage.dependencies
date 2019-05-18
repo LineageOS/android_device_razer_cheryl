@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_kernel_xiaomi_msm8998",
-    "target_path": "kernel/xiaomi/msm8998"
+    "repository": "android_kernel_razer_msm8998",
+    "target_path": "kernel/razer/msm8998"
   },
   {
     "repository": "android_packages_resources_devicesettings",

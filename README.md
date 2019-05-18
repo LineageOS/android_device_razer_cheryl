@@ -1,4 +1,4 @@
-Copyright (C) 2017 The LineageOS Project
+Copyright (C) 2017-2019 The LineageOS Project
 
-Common device tree for Xiaomi MSM8998 based devices
-=========================================
+Device configuration for Razer Phone.
+=====================================
