@@ -325,9 +325,3 @@ service hvdcp_opti /vendor/bin/hvdcp_opti
     user root
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
-
-service readmac /vendor/bin/readmac
-    class main
-    user root
-    group oem_2901
-    oneshot
