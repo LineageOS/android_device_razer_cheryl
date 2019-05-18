@@ -60,50 +60,18 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
-COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-#
-# Load camera configs from vendor
-#
-CAMERA2_SENSOR_MODULES="$COMMON_BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
-sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
-
-#
-# Use stock libskia.so by renaming it to libmisk.so
-#
-MI_SKIA="$COMMON_BLOB_ROOT"/vendor/lib/libmisk.so
-MI_CAMERA_HAL="$COMMON_BLOB_ROOT"/vendor/lib/libMiCameraHal.so
-CAMERA_MSM8998="$COMMON_BLOB_ROOT"/vendor/lib/hw/camera.msm8998.so
-
-skia_to_misk() {
-    sed -i "s|libskia.so|libmisk.so|g" "$1"
-}
-
-skia_to_misk "$MI_SKIA"
-skia_to_misk "$MI_CAMERA_HAL"
-skia_to_misk "$CAMERA_MSM8998"
-
-#
-# Load camera watermark from vendor
-#
-sed -i "s|system/etc/dualcamera.png|vendor/etc/dualcamera.png|g" "$MI_CAMERA_HAL"
+BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 #
 # Correct VZW IMS library location
 #
-QTI_VZW_IMS_INTERNAL="$COMMON_BLOB_ROOT"/vendor/etc/permissions/qti-vzw-ims-internal.xml
+QTI_VZW_IMS_INTERNAL="$BLOB_ROOT"/vendor/etc/permissions/qti-vzw-ims-internal.xml
 sed -i "s|/system/vendor/framework/qti-vzw-ims-internal.jar|/vendor/framework/qti-vzw-ims-internal.jar|g" "$QTI_VZW_IMS_INTERNAL"
 
 #
 # Correct qcrilhook library location
 #
-QCRILHOOK="$COMMON_BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
+QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
 sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
-
-#
-# Correct android.hidl.manager@1.0-java jar name
-#
-QTI_LIBPERMISSIONS="$COMMON_BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
-sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "$QTI_LIBPERMISSIONS"
 
 "$MY_DIR"/setup-makefiles.sh
