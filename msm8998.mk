@@ -326,7 +326,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    libril-wrapper \
     librmnetctl
 
 # Seccomp policy
