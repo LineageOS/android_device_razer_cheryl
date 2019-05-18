@@ -24,8 +24,6 @@
 
 #define LEDS            "/sys/class/leds/"
 
-#define BUTTON1_LED     LEDS "button-backlight1/"
-#define BUTTON_LED      LEDS "button-backlight/"
 #define LCD_LED         LEDS "lcd-backlight/"
 #define WHITE_LED       LEDS "white/"
 
@@ -108,12 +106,6 @@ static void handleBacklight(const LightState& state) {
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
-static void handleButtons(const LightState& state) {
-    uint32_t brightness = getScaledBrightness(state, MAX_LED_BRIGHTNESS);
-    set(BUTTON_LED BRIGHTNESS, brightness);
-    set(BUTTON1_LED BRIGHTNESS, brightness);
-}
-
 /*
  * Scale each value of the brightness ramp according to the
  * brightness of the color.
@@ -174,7 +166,6 @@ static std::vector<LightBackend> backends = {
     { Type::NOTIFICATIONS, handleNotification },
     { Type::BATTERY, handleNotification },
     { Type::BACKLIGHT, handleBacklight },
-    { Type::BUTTONS, handleButtons },
 };
 
 }  // anonymous namespace
