@@ -25,7 +25,10 @@
 #define LEDS            "/sys/class/leds/"
 
 #define LCD_LED         LEDS "lcd-backlight/"
-#define WHITE_LED       LEDS "white/"
+#define RED_LED         LEDS "red/"
+#define GREEN_LED       LEDS "green/"
+#define BLUE_LED        LEDS "blue/"
+#define RGB_LED         LEDS "rgb/"
 
 #define BLINK           "blink"
 #define BRIGHTNESS      "brightness"
@@ -33,10 +36,9 @@
 #define PAUSE_HI        "pause_hi"
 #define PAUSE_LO        "pause_lo"
 #define RAMP_STEP_MS    "ramp_step_ms"
+#define RGB_BLINK       "rgb_blink"
 #define START_IDX       "start_idx"
 
-#define MAX_LED_BRIGHTNESS    255
-#define MAX_LCD_BRIGHTNESS    4095
 
 /*
  * 8 duty percent steps.
@@ -70,39 +72,8 @@ static void set(std::string path, int value) {
     set(path, std::to_string(value));
 }
 
-static uint32_t getBrightness(const LightState& state) {
-    uint32_t alpha, red, green, blue;
-
-    /*
-     * Extract brightness from AARRGGBB.
-     */
-    alpha = (state.color >> 24) & 0xFF;
-    red = (state.color >> 16) & 0xFF;
-    green = (state.color >> 8) & 0xFF;
-    blue = state.color & 0xFF;
-
-    /*
-     * Scale RGB brightness if Alpha brightness is not 0xFF.
-     */
-    if (alpha != 0xFF) {
-        red = red * alpha / 0xFF;
-        green = green * alpha / 0xFF;
-        blue = blue * alpha / 0xFF;
-    }
-
-    return (77 * red + 150 * green + 29 * blue) >> 8;
-}
-
-static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
-    return brightness * maxBrightness / 0xFF;
-}
-
-static inline uint32_t getScaledBrightness(const LightState& state, uint32_t maxBrightness) {
-    return scaleBrightness(getBrightness(state), maxBrightness);
-}
-
 static void handleBacklight(const LightState& state) {
-    uint32_t brightness = getScaledBrightness(state, MAX_LCD_BRIGHTNESS);
+    uint32_t brightness = state.color & 0xFF;
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
@@ -122,10 +93,28 @@ static std::string getScaledRamp(uint32_t brightness) {
 }
 
 static void handleNotification(const LightState& state) {
-    uint32_t whiteBrightness = getScaledBrightness(state, MAX_LED_BRIGHTNESS);
+    uint32_t redBrightness, greenBrightness, blueBrightness, brightness;
 
-    /* Disable blinking */
-    set(WHITE_LED BLINK, 0);
+    /*
+     * Extract brightness from AARRGGBB.
+     */
+    redBrightness = (state.color >> 16) & 0xFF;
+    greenBrightness = (state.color >> 8) & 0xFF;
+    blueBrightness = state.color & 0xFF;
+
+    brightness = (state.color >> 24) & 0xFF;
+
+    /*
+     * Scale RGB brightness if the Alpha brightness is not 0xFF.
+     */
+    if (brightness != 0xFF) {
+        redBrightness = (redBrightness * brightness) / 0xFF;
+        greenBrightness = (greenBrightness * brightness) / 0xFF;
+        blueBrightness = (blueBrightness * brightness) / 0xFF;
+    }
+
+    /* Disable blinking. */
+    set(RGB_LED RGB_BLINK, 0);
 
     if (state.flashMode == Flash::TIMED) {
         /*
@@ -142,17 +131,33 @@ static void handleNotification(const LightState& state) {
             pauseHi = 0;
         }
 
-        /* White */
-        set(WHITE_LED START_IDX, 0 * RAMP_STEPS);
-        set(WHITE_LED DUTY_PCTS, getScaledRamp(whiteBrightness));
-        set(WHITE_LED PAUSE_LO, pauseLo);
-        set(WHITE_LED PAUSE_HI, pauseHi);
-        set(WHITE_LED RAMP_STEP_MS, stepDuration);
+        /* Red */
+        set(RED_LED START_IDX, 0 * RAMP_STEPS);
+        set(RED_LED DUTY_PCTS, getScaledRamp(redBrightness));
+        set(RED_LED PAUSE_LO, pauseLo);
+        set(RED_LED PAUSE_HI, pauseHi);
+        set(RED_LED RAMP_STEP_MS, stepDuration);
 
-        /* Enable blinking */
-        set(WHITE_LED BLINK, 1);
+        /* Green */
+        set(GREEN_LED START_IDX, 1 * RAMP_STEPS);
+        set(GREEN_LED DUTY_PCTS, getScaledRamp(greenBrightness));
+        set(GREEN_LED PAUSE_LO, pauseLo);
+        set(GREEN_LED PAUSE_HI, pauseHi);
+        set(GREEN_LED RAMP_STEP_MS, stepDuration);
+
+        /* Blue */
+        set(BLUE_LED START_IDX, 2 * RAMP_STEPS);
+        set(BLUE_LED DUTY_PCTS, getScaledRamp(blueBrightness));
+        set(BLUE_LED PAUSE_LO, pauseLo);
+        set(BLUE_LED PAUSE_HI, pauseHi);
+        set(BLUE_LED RAMP_STEP_MS, stepDuration);
+
+        /* Enable blinking. */
+        set(RGB_LED RGB_BLINK, 1);
     } else {
-        set(WHITE_LED BRIGHTNESS, whiteBrightness);
+        set(RED_LED BRIGHTNESS, redBrightness);
+        set(GREEN_LED BRIGHTNESS, greenBrightness);
+        set(BLUE_LED BRIGHTNESS, blueBrightness);
     }
 }
 
