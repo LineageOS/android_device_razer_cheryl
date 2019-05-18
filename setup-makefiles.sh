@@ -18,7 +18,10 @@
 
 set -e
 
-INITIAL_COPYRIGHT_YEAR=2017
+DEVICE=cheryl
+VENDOR=razer
+
+INITIAL_COPYRIGHT_YEAR=2019
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -33,28 +36,13 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper for common
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
+# Initialize the helper
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 
 # Copyright headers and guards
-write_headers "chiron sagit"
+write_headers
 
-# The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 # Finish
 write_footers
-
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
-    # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false
-
-    # Copyright headers and guards
-    write_headers
-
-    # The standard device blobs
-    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
-
-    # Finish
-    write_footers
-fi
