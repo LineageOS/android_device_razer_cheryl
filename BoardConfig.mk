@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := razer
 
-PLATFORM_PATH := device/xiaomi/msm8998-common
+DEVICE_PATH := device/razer/cheryl
 
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Architecture
 TARGET_ARCH := arm64
@@ -34,7 +34,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a73
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msm8998
+TARGET_BOOTLOADER_BOARD_NAME := cheryl
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
@@ -44,8 +44,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CONFIG := sagit_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8998
+TARGET_KERNEL_CONFIG := lineageos_cheryl_defconfig
+TARGET_KERNEL_SOURCE := kernel/razer/msm8998
 
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
@@ -59,7 +59,7 @@ TARGET_BOARD_PLATFORM := msm8998
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := sagit
+TARGET_OTA_ASSERT_DEVICE := cheryl
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -114,7 +114,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
@@ -141,14 +141,14 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # NFC
 BOARD_NFC_CHIPSET := pn553
@@ -173,7 +173,7 @@ TARGET_USES_INTERACTION_BOOST := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -183,7 +183,7 @@ TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
@@ -193,8 +193,8 @@ PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_msm8998
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8998
+TARGET_INIT_VENDOR_LIB := libinit_cheryl
+TARGET_RECOVERY_DEVICE_MODULES := libinit_cheryl
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -211,4 +211,4 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from proprietary files
-include vendor/xiaomi/msm8998-common/BoardConfigVendor.mk
+include vendor/razer/cheryl/BoardConfigVendor.mk
