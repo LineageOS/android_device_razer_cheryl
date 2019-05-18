@@ -76,6 +76,23 @@ TARGET_SCREEN_WIDTH := 1080
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+PRODUCT_PACKAGES += \
+    otapreopt_script
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -125,6 +142,21 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
+
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    bootctrl.msm8998 \
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.msm8998 \
+    libcutils \
+    libgptutils \
+    libz
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -337,6 +369,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# Update engine
+PRODUCT_PACKAGES += \
+    brillo_update_payload \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 # USB
 PRODUCT_PACKAGES += \
