@@ -1,3 +1,6 @@
+# Amplifier
+/(vendor|system/vendor)/bin/init\.rcl\.smartamp_init\.sh      u:object_r:qti_init_shell_exec:s0
+
 # Fingerprint
 /dev/goodix_fp                                                u:object_r:fingerprint_device:s0
 /data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_data_file:s0
@@ -27,7 +30,6 @@
 /sys/kernel/debug/rmt_storage/rmts                            u:object_r:debugfs_rmts:s0
 
 # Sensors
-/(vendor|system/vendor)/bin/init\.panel_info\.sh              u:object_r:qti_init_shell_exec:s0
 /persist/PRSensorData\.txt                                    u:object_r:sensors_persist_file:s0
 
 # Thermal engine
