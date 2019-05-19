@@ -335,11 +335,35 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.qcom.target.rc \
+    init.rcl.battery.rc \
+    init.rcl.fingerprint.rc \
+    init.rcl.lcm.rc \
+    init.rcl.poweroff_charging.rc \
+    init.rcl.smartamp_init.sh \
+    init.rcl.smartamp.rc \
+    init.rcl.target.rc \
+    init.rcl.touch.rc \
     ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
-    init.panel_info.sh \
     init.qcom.sh \
+    init.class_main.sh \
+    init.crda.sh \
+    init.mdm.sh \
+    init.qcom.class_core.sh \
+    init.qcom.coex.sh \
+    init.qcom.crashdata.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.sdio.sh \
+    init.qcom.sensors.sh \
+    init.qcom.syspart_fixup.sh \
+    init.qcom.usb.sh \
+    init.qcom.wifi.sh \
+    init.qti.fm.sh \
+    init.qti.ims.sh \
+    init.qti.qseecomd.sh \
     init.qcom.post_boot.sh
 
 # RCS
