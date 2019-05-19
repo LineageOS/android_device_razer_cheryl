@@ -6,9 +6,6 @@ ro.boot.fp.                                                   u:object_r:fingerp
 sys.fake_bs_flag0                                             u:object_r:system_radio_prop:s0
 sys.fake_bs_flag1                                             u:object_r:system_radio_prop:s0
 
-# Sensors
-sys.panel.                                                    u:object_r:sensors_panel_prop:s0
-
 # Thermal engine
 persist.sys.thermal.                                          u:object_r:thermal_prop:s0
 sys.thermal.                                                  u:object_r:thermal_prop:s0
