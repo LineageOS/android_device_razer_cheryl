@@ -91,7 +91,7 @@ on init
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1248000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "83 1804800:95"
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "85 1747200:95"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 19000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
@@ -106,7 +106,7 @@ on init
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1574400
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "83 1939200:90 2016000:95"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "85 1728000:90 1958400:95"
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 19000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 300000
@@ -117,7 +117,7 @@ on init
 
     # Enable input boost configuration
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 100
+    write /sys/module/cpu_boost/parameters/input_boost_ms 160
 
     # Disable retention
     write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
@@ -140,9 +140,13 @@ on init
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
+    # Tuning for 8GB memory
+    echo "26214,32768,39321,45875,78643,114688" > /sys/module/lowmemorykiller/parameters/minfree
+    echo 131072 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+
 on fs
     mount_all /vendor/etc/fstab.qcom --early
-    swapon_all /vendor/etc/fstab.qcom
+    #swapon_all /vendor/etc/fstab.qcom
 
     restorecon_recursive /persist
     mkdir /persist/data 0700 system system
@@ -189,6 +193,10 @@ on post-fs-data
     mkdir /data/thermal/config 0771 system system
 
 on property:sys.boot_completed=1
+    # Reset read ahead for dm-0 and dm-1 to 128kb
+    # alex.naidis@paranoidandroid.co Use 128kb to prevent page thrashing
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
     # Post-boot fs tuning
     write /sys/block/sda/queue/iostats 1
     write /sys/block/sda/queue/nr_requests 128
@@ -202,7 +210,7 @@ on property:sys.boot_completed=1
     write /dev/cpuset/foreground/cpus 0-3,6-7
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/camera-daemon/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
 
     start qcom-post-boot
 
@@ -265,15 +273,18 @@ service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
+    writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /vendor/bin/thermal-engine -T
     class main
+    critical
     user root
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
     group root
+    writepid /dev/cpuset/system-background/tasks
 
 service adsprpcd /vendor/bin/adsprpcd
     class main
@@ -298,6 +309,7 @@ service imsdatadaemon /vendor/bin/imsdatadaemon
 
 service pd_mapper /vendor/bin/pd-mapper
     class core
+    writepid /dev/cpuset/system-background/tasks
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
