@@ -335,10 +335,17 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.qcom.target.rc \
+    init.rcl.battery.rc \
+    init.rcl.fingerprint.rc \
+    init.rcl.lcm.rc \
+    init.rcl.smartamp_init.sh \
+    init.rcl.smartamp.rc \
+    init.rcl.target.rc \
+    init.rcl.touch.rc \
     ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
-    init.panel_info.sh \
     init.qcom.sh \
     init.qcom.post_boot.sh
 

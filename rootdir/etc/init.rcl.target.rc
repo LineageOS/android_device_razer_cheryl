@@ -1,0 +1,12 @@
+import /vendor/etc/init/hw/init.rcl.smartamp.rc
+import /vendor/etc/init/hw/init.rcl.touch.rc
+import /vendor/etc/init/hw/init.rcl.lcm.rc
+import /vendor/etc/init/hw/init.rcl.battery.rc
+import /vendor/etc/init/hw/init.rcl.poweroff_charging.rc
+import /vendor/etc/init/hw/init.rcl.fingerprint.rc
+
+on boot
+    # alex.naidis@paranoidandroid.co Limit msm-core wq to cpumask 0x7
+    write /sys/devices/virtual/workqueue/msm-core_wq/cpumask 7
+    # alex.naidis@paranoidandroid.co Limit devfreq wq to cpumask 0x17
+    write /sys/devices/virtual/workqueue/devfreq_wq/cpumask 17
