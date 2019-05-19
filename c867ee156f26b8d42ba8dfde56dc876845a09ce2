@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e92716ed_7dbb6dde",
+        "filename": "rootdir/etc/fstab.qcom",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-05-19T21:10:16Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 6,
+        "startChar": 90,
+        "endLine": 6,
+        "endChar": 100
+      },
+      "revId": "c867ee156f26b8d42ba8dfde56dc876845a09ce2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cfa7d82_f7e7387c",
+        "filename": "rootdir/etc/fstab.qcom",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-05-19T21:10:16Z",
+      "side": 1,
+      "message": "Add back latemount and keep FBE",
+      "range": {
+        "startLine": 6,
+        "startChar": 168,
+        "endLine": 6,
+        "endChar": 216
+      },
+      "revId": "c867ee156f26b8d42ba8dfde56dc876845a09ce2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
