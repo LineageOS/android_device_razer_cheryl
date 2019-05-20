@@ -119,7 +119,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=true \
     ro.build.shutdown_timeout=0 \
     ro.com.google.gmsversion=8.1_201807 \
-    ro.control_privapp_permissions=enforce \
     ro.cp_system_other_odex=1 \
     ro.opa.eligible_device=true \
     ro.qcom.hdr.config=/system/etc/hdr_tm_config.xml \
