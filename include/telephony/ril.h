@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2006 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1111,6 +1112,10 @@ typedef struct
   int              pin1_replaced;   /* applicable to USIM, CSIM & ISIM */
   RIL_PinState     pin1;
   RIL_PinState     pin2;
+  int              fih_pin1_count;
+  int              fih_puk1_count;
+  int              fih_pin2_count;
+  int              fih_puk2_count;
 } RIL_AppStatus;
 
 /* Deprecated, use RIL_CardStatus_v6 */
@@ -1122,6 +1127,7 @@ typedef struct
   int           cdma_subscription_app_index;     /* value < RIL_CARD_MAX_APPS, -1 if none */
   int           num_applications;                /* value <= RIL_CARD_MAX_APPS */
   RIL_AppStatus applications[RIL_CARD_MAX_APPS];
+  int           fih_hotswap_state;
 } RIL_CardStatus_v5;
 
 typedef struct
@@ -1133,6 +1139,7 @@ typedef struct
   int           ims_subscription_app_index;      /* value < RIL_CARD_MAX_APPS, -1 if none */
   int           num_applications;                /* value <= RIL_CARD_MAX_APPS */
   RIL_AppStatus applications[RIL_CARD_MAX_APPS];
+  int           fih_hotswap_state;
 } RIL_CardStatus_v6;
 
 /** The result of a SIM refresh, returned in data[0] of RIL_UNSOL_SIM_REFRESH
@@ -1328,15 +1335,22 @@ typedef struct {
                   * Reference: 3GPP TS 25.123, section 9.1.1.1 */
 } RIL_TD_SCDMA_SignalStrength;
 
+typedef struct {
+    int rssi;
+    int ecio;
+} RIL_FIH_3RP_GMON_SignalStrength;
+
 /* Deprecated, use RIL_SignalStrength_v6 */
 typedef struct {
     RIL_GW_SignalStrength   GW_SignalStrength;
+    RIL_FIH_3RP_GMON_SignalStrength FIH_3RP_GMON_SignalStrength;
     RIL_CDMA_SignalStrength CDMA_SignalStrength;
     RIL_EVDO_SignalStrength EVDO_SignalStrength;
 } RIL_SignalStrength_v5;
 
 typedef struct {
     RIL_GW_SignalStrength   GW_SignalStrength;
+    RIL_FIH_3RP_GMON_SignalStrength FIH_3RP_GMON_SignalStrength;
     RIL_CDMA_SignalStrength CDMA_SignalStrength;
     RIL_EVDO_SignalStrength EVDO_SignalStrength;
     RIL_LTE_SignalStrength  LTE_SignalStrength;
@@ -1344,6 +1358,7 @@ typedef struct {
 
 typedef struct {
     RIL_GW_SignalStrength       GW_SignalStrength;
+    RIL_FIH_3RP_GMON_SignalStrength FIH_3RP_GMON_SignalStrength;
     RIL_CDMA_SignalStrength     CDMA_SignalStrength;
     RIL_EVDO_SignalStrength     EVDO_SignalStrength;
     RIL_LTE_SignalStrength_v8   LTE_SignalStrength;
@@ -1351,6 +1366,7 @@ typedef struct {
 
 typedef struct {
     RIL_GW_SignalStrength       GW_SignalStrength;
+    RIL_FIH_3RP_GMON_SignalStrength FIH_3RP_GMON_SignalStrength;
     RIL_CDMA_SignalStrength     CDMA_SignalStrength;
     RIL_EVDO_SignalStrength     EVDO_SignalStrength;
     RIL_LTE_SignalStrength_v8   LTE_SignalStrength;
