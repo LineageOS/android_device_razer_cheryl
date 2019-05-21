@@ -33,29 +33,15 @@
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>8</item>
-        <item>13</item>
-        <item>17</item>
-        <item>21</item>
-        <item>26</item>
-        <item>30</item>
-        <item>34</item>
-        <item>140</item>
-        <item>310</item>
-        <item>400</item>
-        <item>500</item>
+        <item>20</item>
+        <item>40</item>
+        <item>100</item>
+        <item>325</item>
         <item>600</item>
-        <item>1000</item>
-        <item>1200</item>
-        <item>1500</item>
-        <item>3000</item>
-        <item>3500</item>
+        <item>1250</item>
+        <item>2200</item>
         <item>4000</item>
+        <item>10000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -63,30 +49,16 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>2</item>
-        <item>2</item>
-        <item>2</item>
-        <item>3</item>
-        <item>3</item>
-        <item>5</item>
-        <item>5</item>
-        <item>12</item>
-        <item>12</item>
-        <item>20</item>
-        <item>20</item>
-        <item>39</item>
-        <item>39</item>
-        <item>43</item>
-        <item>43</item>
+        <item>8</item>
+        <item>15</item>
+        <item>40</item>
         <item>55</item>
-        <item>55</item>
-        <item>63</item>
-        <item>63</item>
-        <item>84</item>
-        <item>93</item>
-        <item>105</item>
-        <item>200</item>
-        <item>240</item>
+        <item>82</item>
+        <item>120</item>
+        <item>150</item>
+        <item>180</item>
+        <item>230</item>
+        <item>255</item>
         <item>255</item>
     </integer-array>
 
@@ -221,17 +193,16 @@
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1,-1,true"</item>
         <item>"mobile,0,0,0,-1,true"</item>
-        <item>"mobile_mms,2,0,2,60000,true"</item>
+        <item>"mobile_mms,2,0,4,60000,true"</item>
         <item>"mobile_supl,3,0,2,60000,true"</item>
         <item>"mobile_dun,4,0,2,60000,true"</item>
         <item>"mobile_hipri,5,0,3,60000,true"</item>
         <item>"mobile_fota,10,0,2,60000,true"</item>
         <item>"mobile_ims,11,0,2,60000,true"</item>
         <item>"mobile_cbs,12,0,2,60000,true"</item>
-        <item>"mobile_ia,14,0,2,-1,true"</item>
         <item>"bluetooth,7,7,2,-1,true"</item>
         <item>"ethernet,9,9,9,-1,true"</item>
-        <item>"mobile_emergency,15,0,2,-1,true"</item>
+        <item>"mobile_emergency,15,0,5,-1,true"</item>
     </string-array>
 
     <!-- This string array should be overridden by the device to present a list of radio
@@ -362,16 +333,16 @@
          If no value is found for the rat-name in use, the system default will be applied.
     -->
     <string-array name="config_mobile_tcp_buffers">
-        <item>umts:131072,262144,1452032,4096,16384,399360</item>
-        <item>hspa:131072,262144,2441216,4096,16384,399360</item>
-        <item>hsupa:131072,262144,2441216,4096,16384,399360</item>
-        <item>hsdpa:131072,262144,2441216,4096,16384,399360</item>
-        <item>hspap:131072,262144,2441216,4096,16384,399360</item>
-        <item>edge:16384,32768,131072,4096,16384,65536</item>
-        <item>gprs:4096,8192,24576,4096,8192,24576</item>
-        <item>1xrtt:16384,32768,131070,4096,16384,102400</item>
-        <item>evdo:131072,262144,1048576,4096,16384,524288</item>
-        <item>lte:524288,1048576,8388608,262144,524288,4194304</item>
+        <item>lte:2097152,4194304,8388608,262144,524288,1048576</item>
+        <item>lte_ca:2097152,4194304,8388608,4096,1048576,2097152</item>
+        <item>umts:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsupa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsdpa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspap:4094,87380,1220608,4096,16384,1220608</item>
+        <item>edge:4093,26280,35040,4096,16384,35040</item>
+        <item>gprs:4092,8760,11680,4096,8760,11680</item>
+        <item>evdo:4094,87380,524288,4096,16384,262144</item>
     </string-array>
 
     <!-- Configure wifi tcp buffersizes in the form:
@@ -418,20 +389,41 @@
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>28</item>
+        <item>13</item>
         <item>10</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>28</item>
-        <item>8</item>
+        <item>13</item>
+        <item>10</item>
     </integer-array>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>28</item>
+        <item>12</item>
+    </integer-array>
+
+    <!-- Vibrator pattern to be used as the default for notifications
+         that specify DEFAULT_VIBRATE.
+     -->
+    <integer-array name="config_defaultNotificationVibePattern">
+        <item>0</item>
+        <item>45</item>
+        <item>250</item>
+        <item>45</item>
+    </integer-array>
+
+    <!-- Vibrator pattern to be used as the default for notifications
+         that do not specify vibration but vibrate anyway because the device
+         is in vibrate mode.
+     -->
+    <integer-array name="config_notificationFallbackVibePattern">
+        <item>0</item>
+        <item>35</item>
+        <item>150</item>
+        <item>35</item>
     </integer-array>
 
     <!-- Control the behavior when the user long presses the home button.
@@ -471,4 +463,17 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
+
+    <!-- Values for GPS configuration -->
+    <string-array name="config_gpsParameters">
+        <item>SUPL_HOST=supl.google.com</item>
+        <item>SUPL_PORT=7275</item>
+        <item>SUPL_VER=0x20000</item>
+        <item>SUPL_MODE=1</item>
+        <item>SUPL_ES=0</item>
+        <item>LPP_PROFILE=0</item>
+        <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
+        <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
+        <item>GPS_LOCK=0</item>
+    </string-array>
 </resources>
