@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2006 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1131,6 +1132,7 @@ typedef struct
   int           gsm_umts_subscription_app_index; /* value < RIL_CARD_MAX_APPS, -1 if none */
   int           cdma_subscription_app_index;     /* value < RIL_CARD_MAX_APPS, -1 if none */
   int           ims_subscription_app_index;      /* value < RIL_CARD_MAX_APPS, -1 if none */
+  int           fih_hotswap_state;
   int           num_applications;                /* value <= RIL_CARD_MAX_APPS */
   RIL_AppStatus applications[RIL_CARD_MAX_APPS];
 } RIL_CardStatus_v6;
