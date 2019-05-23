@@ -619,6 +619,7 @@ vendor/lib/libsmwrapper.so
 -vendor/lib/libgpustats.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxVpp.so
+vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
