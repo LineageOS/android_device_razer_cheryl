@@ -1,5 +1,2 @@
 # Fingerprint
 type fingerprint_status_prop, property_type;
-
-# Thermal engine
-type thermal_prop, property_type;
