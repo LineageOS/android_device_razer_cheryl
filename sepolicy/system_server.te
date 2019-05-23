@@ -1,2 +1,0 @@
-# Fingerprint
-allow system_server fingerprint_sysfs:file rw_file_perms;
