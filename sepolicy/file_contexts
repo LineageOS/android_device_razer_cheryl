@@ -18,6 +18,3 @@
 
 # Remote storage
 /sys/kernel/debug/rmt_storage/rmts                            u:object_r:debugfs_rmts:s0
-
-# Sensors
-/persist/PRSensorData\.txt                                    u:object_r:sensors_persist_file:s0
