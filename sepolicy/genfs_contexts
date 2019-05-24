@@ -5,3 +5,6 @@ genfscon sysfs /devices/soc/caa4000.qcom,fd                   u:object_r:sysfs_g
 
 # Power
 genfscon debugfs /wlan0                                       u:object_r:debugfs_wlan:s0
+
+# Sensors
+genfscon proc /baseband                                       u:object_r:proc_baseband:s0
