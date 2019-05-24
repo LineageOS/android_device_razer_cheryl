@@ -15,3 +15,7 @@
 
 # Remote storage
 /sys/kernel/debug/rmt_storage/rmts                            u:object_r:debugfs_rmts:s0
+
+# TFTP server
+/data/misc/fih_atl(/.*)?                                      u:object_r:rfs_shared_hlos_file:s0
+/data/misc/fih_mcfg(/.*)?                                     u:object_r:rfs_shared_hlos_file:s0
