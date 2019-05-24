@@ -10,3 +10,6 @@ type proc_touchpanel, fs_type;
 
 # Remote storage
 type debugfs_rmts, debugfs_type, fs_type;
+
+# Sensors
+type proc_baseband, fs_type;
