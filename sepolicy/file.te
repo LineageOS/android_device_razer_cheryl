@@ -3,13 +3,13 @@ type fingerprint_sysfs, sysfs_type, fs_type;
 
 # Power
 type debugfs_wlan, debugfs_type, fs_type;
-type proc_touchpanel, fs_type;
+type proc_touchpanel, proc_type, fs_type;
 
 # Remote storage
 type debugfs_rmts, debugfs_type, fs_type;
 
 # Sensors
-type proc_baseband, fs_type;
+type proc_baseband, proc_type, fs_type;
 
 # TFTP server
 type data_rfs_shared_hlos_file, file_type, core_data_file_type, data_file_type;
