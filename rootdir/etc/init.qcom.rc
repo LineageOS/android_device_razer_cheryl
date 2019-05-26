@@ -321,6 +321,11 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     oneshot
 
 service vendor.amp-init-sh /vendor/bin/init.rcl.smartamp_init.sh
-    class late_start
-    user root
+    class main
+    user system
+    group system
+    disabled
     oneshot
+
+on property:sys.boot_completed=1
+    start vendor.amp-init-sh
