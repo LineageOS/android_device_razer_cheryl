@@ -604,7 +604,7 @@
 
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="0" />
 
-    <ctl name="Stereo Profile" value="music_left" />
+    <ctl name="Stereo Profile" value="dolby_left" />
     <ctl name="QUAT_MI2S_RX Format" value="S16_LE" />
     <ctl name="QUAT_MI2S_RX Channels" value="Two" />
     <ctl name="QUAT_MI2S_TX Format" value="S16_LE" />
