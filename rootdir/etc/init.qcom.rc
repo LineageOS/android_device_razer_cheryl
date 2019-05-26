@@ -275,6 +275,14 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
+on property:ro.vendor.ril.fih_mbn_copy_completed=1
+    write /data/vendor/radio/atl_complete 0
+    write /data/misc/fih_mcfg/rfs_complete 0
+    write /data/misc/fih_mcfg/atl_log.txt ""
+
+on property:ro.vendor.ril.fih_mcfg_lock=1
+    write /data/misc/fih_mcfg/fih_mcfg.lock ""
+
 service vendor.qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
