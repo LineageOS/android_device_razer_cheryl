@@ -1,0 +1,1 @@
+allow hal_bluetooth_qti proc_bt_mac:file r_file_perms;
