@@ -1,3 +1,6 @@
+# Bluetooth
+type proc_bt_mac, proc_type, fs_type;
+
 # CNE
 type cnd_core_data_file, file_type, core_data_file_type, data_file_type;
 
