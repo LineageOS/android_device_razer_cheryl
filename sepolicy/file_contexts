@@ -1,5 +1,5 @@
 # Amplifier
-/(vendor|system/vendor)/bin/init\.rcl\.smartamp_init\.sh      u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.rcl\.smartamp_init\.sh      u:object_r:smartamp_init_exec:s0
 
 # CNE
 /data/connectivity(/.*)?                                      u:object_r:cnd_core_data_file:s0
