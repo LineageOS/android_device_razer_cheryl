@@ -154,7 +154,6 @@ on fs
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/time 0770 system system
-    mkdir /mnt/vendor/persist/wlan_bt 0770 system system
 
 on post-fs
     wait_for_prop sys.listeners.registered true
