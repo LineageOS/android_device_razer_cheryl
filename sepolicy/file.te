@@ -8,6 +8,9 @@ type fingerprint_sysfs, sysfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type sysfs_touchpanel, sysfs_type, fs_type;
 
+# Radio
+type proc_bandinfo, proc_type, fs_type;
+
 # Remote storage
 type debugfs_rmts, debugfs_type, fs_type;
 
