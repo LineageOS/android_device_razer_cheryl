@@ -2242,7 +2242,6 @@
     </path>
 
     <path name="speaker">
-        <ctl name="RX INT0_1 MIX1 INP0" value="ZERO" />
         <ctl name="QUAT_MI2S_RX Format" value="S24_LE" />
     </path>
 
@@ -2455,7 +2454,6 @@
 
     <path name="voice-speaker">
         <path name="speaker-mono" />
-        <ctl name="RX INT0_1 MIX1 INP0" value="ZERO" />
         <ctl name="QUAT_MI2S_RX Channels" value="One" />
         <ctl name="Stereo Profile" value="voice_left" />
     </path>
