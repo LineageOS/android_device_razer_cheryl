@@ -132,6 +132,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.mux_count=8 \
     persist.data.df.ul_mode=5
 
+# OEM Unlocking
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=true
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
@@ -162,9 +166,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.pmd=true \
     ro.vendor.sensors.sta_detect=true
 
+# Shutdown
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.shutdown_timeout=0 \
+    sys.vendor.shutdown.waittime=500
+
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.delta_time.enable=true
+
+# Voice assistant
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
 
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -174,11 +187,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wlan
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# Random
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.mwc.walk_around=1 \
-    ro.oem_unlock_supported=true \
-    ro.build.shutdown_timeout=0 \
-    ro.opa.eligible_device=true \
-    sys.vendor.shutdown.waittime=500
