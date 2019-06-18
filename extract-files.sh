@@ -70,6 +70,7 @@ function blob_fixup() {
         ;;
     vendor/lib/libdczoom.so)
         patchelf --remove-needed "libandroid.so" "${2}"
+        patchelf --remove-needed "libgui.so" "${2}"
         ;;
     vendor/lib64/lib-dplmedia.so)
         patchelf --remove-needed "libmedia.so" "${2}"
@@ -79,6 +80,9 @@ function blob_fixup() {
         ;;
     vendor/lib/libaudcal.so)
         sed -i "s|\/data\/vendor\/misc\/audio\/acdbdata\/delta\/|\/data\/vendor\/audio\/acdbdata\/delta\/\x00\x00\x00\x00\x00|g" "${2}"
+        ;;
+    vendor/lib/libmmcamera_ppeiscore.so)
+        patchelf --remove-needed "libgui.so" "${2}"
         ;;
     esac
 }
