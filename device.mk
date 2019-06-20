@@ -386,10 +386,7 @@ PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
 # VNDK
-# Update this list with what each blob is actually for
-# libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
-    libstdc++.vendor \
     vndk_package
 
 # TextClassifier smart selection model files
