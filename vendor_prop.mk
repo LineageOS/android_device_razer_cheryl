@@ -113,6 +113,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
     vidc.enc.dcvs.extra-buff-count=2
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
