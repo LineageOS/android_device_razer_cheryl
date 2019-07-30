@@ -91,10 +91,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=11 \
     persist.vendor.dpm.tcm=2
 
-# Enforce privapp-permissions whitelist
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.control_privapp_permissions=enforce
-
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
