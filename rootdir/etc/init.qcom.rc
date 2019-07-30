@@ -299,7 +299,8 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
 
 service charger /charger
     class charger
-    group system graphics
+    user system
+    group system graphics input
     seclabel u:r:healthd:s0
     writepid /dev/cpuset/system-background/tasks
 
