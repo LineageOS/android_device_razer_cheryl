@@ -65,6 +65,12 @@ function blob_fixup() {
     vendor/etc/permissions/qcrilhook.xml)
         sed -i 's|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g' "${2}"
         ;;
+    vendor/lib/libdczoom.so)
+        patchelf --add-needed "libui_shim.so" "${2}"
+        ;;
+    vendor/lib/libfusionLibrary.so)
+        patchelf --add-needed "libui_shim.so" "${2}"
+        ;;
     esac
 }
 
