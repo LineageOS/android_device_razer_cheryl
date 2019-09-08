@@ -382,8 +382,10 @@ vendor/lib/libmmcamera_s5k3m3sm_rcl_tele.so
 # Charger
 vendor/bin/hvdcp_opti
 
+# CNEService - from mata QP1A.190711.107
+-priv-app/CNEService/CNEService.apk|d8579ab4633111f5473b3be8c9da487504908167
+
 # CNE
--priv-app/CNEService/CNEService.apk|4c6ee655fcdda500f4999ca9b3e1c028af2c8a71
 vendor/bin/cnd
 vendor/lib64/com.quicinc.cne.api@1.0.so
 vendor/lib64/com.quicinc.cne.constants@1.0.so
