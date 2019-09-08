@@ -10,6 +10,10 @@
 # Fingerprint
 /sys/devices/soc/soc:fpc1020(/.*)?                            u:object_r:fingerprint_sysfs:s0
 
+# Firmware
+/firmware                                                     u:object_r:firmware_file:s0
+/bt_firmware                                                  u:object_r:bt_firmware_file:s0
+
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.cheryl u:object_r:hal_light_default_exec:s0
 
