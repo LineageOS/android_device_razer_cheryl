@@ -84,6 +84,9 @@ function blob_fixup() {
     vendor/lib/libmmcamera_ppeiscore.so)
         patchelf --remove-needed "libgui.so" "${2}"
         ;;
+    vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so)
+        patchelf --replace-needed "libbase.so" "libbase-v28.so" "${2}"
+        ;;
     esac
 }
 
