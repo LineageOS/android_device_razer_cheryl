@@ -84,6 +84,10 @@ function blob_fixup() {
     vendor/lib/libmmcamera_ppeiscore.so)
         patchelf --remove-needed "libgui.so" "${2}"
         ;;
+    vendor/bin/imsrcsd)
+        patchelf --replace-needed "libbase.so" "libbase-v28.so" "${2}"
+        patchelf --replace-needed "libhidlbase.so" "libhidlbase-v28.so" "${2}"
+        ;;
     esac
 }
 
