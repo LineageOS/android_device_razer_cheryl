@@ -324,3 +324,5 @@
 69:4294967295:1000
 /* <WLPS QMI Service ID - 0x39>:<WLFW QMI Instance ID - all instances>:<Client Group ID> */
 57:4294967295:1000
+/* FIH@R3J168: FEATURE_FIH_QCRIL_PING_PONG, Allow QMI PING service to aquire net_raw permission */
+15:4294967295:1001
