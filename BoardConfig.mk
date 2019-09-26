@@ -199,7 +199,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/persist:/persist
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2018-07-05
+VENDOR_SECURITY_PATCH := 2019-07-05
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
