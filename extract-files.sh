@@ -62,27 +62,8 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    vendor/etc/permissions/qti-vzw-ims-internal.xml)
-        sed -i 's|/system/vendor/framework/qti-vzw-ims-internal.jar|/vendor/framework/qti-vzw-ims-internal.jar|g' "${2}"
-        ;;
     vendor/etc/permissions/qcrilhook.xml)
         sed -i 's|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g' "${2}"
-        ;;
-    vendor/lib/libdczoom.so)
-        patchelf --remove-needed "libandroid.so" "${2}"
-        patchelf --remove-needed "libgui.so" "${2}"
-        ;;
-    vendor/lib64/lib-dplmedia.so)
-        patchelf --remove-needed "libmedia.so" "${2}"
-        ;;
-    vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc)
-        sed -i "/ disabled/Q" "${2}"
-        ;;
-    vendor/lib/libaudcal.so)
-        sed -i "s|\/data\/vendor\/misc\/audio\/acdbdata\/delta\/|\/data\/vendor\/audio\/acdbdata\/delta\/\x00\x00\x00\x00\x00|g" "${2}"
-        ;;
-    vendor/lib/libmmcamera_ppeiscore.so)
-        patchelf --remove-needed "libgui.so" "${2}"
         ;;
     esac
 }
