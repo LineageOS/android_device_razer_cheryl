@@ -40,6 +40,6 @@ PRODUCT_MANUFACTURER := Razer
 PRODUCT_GMS_CLIENTID_BASE := android-razer
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="cheryl-user 8.1.0 OPM1.171019.011-RZR-180803 6033 release-keys"
+    PRIVATE_BUILD_DESC="cheryl-user 9 P-MR2-RC001-RZR-N 7083 release-keys"
 
-BUILD_FINGERPRINT=razer/cheryl/cheryl:8.1.0/OPM1.171019.011-RZR-180803/6033:user/release-keys
+BUILD_FINGERPRINT=razer/cheryl/cheryl:9/P-MR2-RC001-RZR-N/7083:user/release-keys
