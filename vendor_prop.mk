@@ -18,6 +18,7 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
+    audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
     audio.safemedia.force=true \
     persist.vendor.audio.fluence.audiorec=false \
@@ -26,10 +27,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.audio.ras.enabled=false \
     persist.vendor.bt.a2dp_offload_cap=sbc-aac \
-    ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=7 \
+    ro.af.client_heap_size_kbyte=7168 \
+    ro.config.alarm_vol_default=10 \
+    ro.config.alarm_vol_steps=16 \
+    ro.config.media_vol_default=7 \
+    ro.config.media_vol_steps=18 \
+    ro.config.vc_call_vol_default=6 \
+    ro.config.vc_call_vol_steps=8 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
+    vendor.audio.adm.buffering.ms=3 \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
@@ -48,13 +55,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio_hal.period_multiplier=2 \
-    vendor.audio_hal.period_size=192 \
-    vendor.fm.a2dp.conc.disabled=true
+    vendor.audio_hal.period_size=192
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee \
-    ro.bt.bdaddr_path=/proc/bt_mac
+    ro.vendor.bt.bdaddr_path=/proc/bt_mac
 
 # Boot control
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -62,7 +68,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.camera.aux.packagelist=com.razerzone.camera,org.lineageos.snap \
+    camera.disable_zsl_mode=1 \
+    vendor.camera.aux.packagelist=com.razer.camera,org.lineageos.snap,com.razerzone.camera \
     vidc.enc.dcvs.extra-buff-count=2
 
 # CNE
@@ -76,19 +83,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=0 \
     persist.metadata_dynfps.disable=1 \
+    persist.sys.sf.native_mode=3 \
     ro.opengles.version=196610 \
-    ro.qualcomm.cabl=0 \
     ro.sf.lcd_density=560 \
+    ro.vendor.display.cabl=0 \
     vendor.display.disable_partial_split=1 \
     vendor.display.disable_rotator_downscale=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
+    vendor.display.res_switch_en=1 \
     vendor.gralloc.enable_fb_ubwc=1
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=11 \
     persist.vendor.dpm.tcm=2
 
 # FRP
@@ -97,13 +105,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # HDR
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qcom.hdr.config=/system/etc/hdr_tm_config.xml
+    ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=0 \
     persist.dbg.vt_avail_ovr=0 \
-    persist.dbg.wfc_avail_ovr=0
+    persist.dbg.wfc_avail_ovr=0 \
+    persist.rcs.supported=0
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -121,7 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Network manager
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.iwlan.enable=true \
+    persist.vendor.data.iwlan.enable=true \
     persist.data.netmgrd.qos.enable=true \
     persist.data.wda.enable=true \
     persist.data.df.agg.dl_pkt=10 \
@@ -140,7 +149,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.vendor.qti.core_ctl_max_cpu=4 \
-    ro.vendor.qti.core_ctl_min_cpu=2
+    ro.vendor.qti.core_ctl_min_cpu=2 \
+    ro.vendor.qti.sys.fw.bg_apps_limit=38
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -159,6 +169,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.sensors.direct_channel=true \
     ro.vendor.sensors.dev_ori=false \
     ro.vendor.sensors.dpc=true \
     ro.vendor.sensors.mot_detect=true \
@@ -168,8 +179,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Shutdown
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.shutdown_timeout=0 \
-    sys.vendor.shutdown.waittime=500
+    ro.build.shutdown_timeout=6
 
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -179,9 +189,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
+# Widevine
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
+
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=0 \
+    persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
 
 # Wlan
