@@ -191,11 +191,6 @@ on late-fs
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.qcom --late
 
-on post-fs-data
-    # Create directory for thermal engine
-    mkdir /data/thermal 0771 system system
-    mkdir /data/thermal/config 0771 system system
-
 on property:sys.boot_completed=1
     # Enable UFS powersaving
     write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
