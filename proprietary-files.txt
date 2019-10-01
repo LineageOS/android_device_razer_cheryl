@@ -58,7 +58,6 @@ vendor/lib/soundfx/libqcvirt.so
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/libbtnv.so
 
 # Bluetooth ANT
 lib/com.qualcomm.qti.ant@1.0.so
