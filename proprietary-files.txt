@@ -18,15 +18,13 @@ vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
-# Alarm - from chiron 8.7.5
-vendor/etc/permissions/vendor-qti-hardware-alarm.xml|99ea2b3abffc975fb9875b5b3befabfb6eead7b9
--vendor/app/PowerOffAlarm/PowerOffAlarm.apk|3abbb8b4d98e2959d2b50f806a976ed27adaabf2
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|609c9713e267b475531ec1e04e08d3138c360140
+# Alarm - from chiron V10.4.1.0
+-vendor/app/PowerOffAlarm/PowerOffAlarm.apk|460dd254f1f96d44f4eb00822fe93b44f1b6c3bf
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|b6a5750bbcd3881ee26bf42b1370c567420e0c71
 vendor/bin/power_off_alarm|459ccd83df3fcc076bb82bff60f47d14ad69ad6e
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
-vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar|99028a0a7ce58de3a370527a7b4f4addb37b2201
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|18685260ac31c52728d1a793c41f91d374a15f2f
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|178ddcd10e62a9c900b3f3d45165b7025f2c6b74
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|df138b77fb116a1a786a70c9c76b69d61b5c04d2
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|6f28bd9425af72d48266ff88b728c61f827571a8
 
 # Audio ACDB
 vendor/etc/acdbdata/RCL/Bluetooth_cal.acdb
