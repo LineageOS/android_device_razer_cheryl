@@ -171,6 +171,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_NO_RECOVERY := true
 
 # Power
+TARGET_HAS_NO_WLAN_STATS := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input1/wake_gesture"
 TARGET_USES_INTERACTION_BOOST := true
 
