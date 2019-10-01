@@ -4,9 +4,6 @@ type proc_bt_mac, proc_type, fs_type;
 # Fingerprint
 type fingerprint_sysfs, sysfs_type, fs_type;
 
-# Power
-type debugfs_wlan, debugfs_type, fs_type;
-
 # Radio
 type proc_bandinfo, proc_type, fs_type;
 
