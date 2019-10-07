@@ -1,6 +1,9 @@
 # Amplifier
 /(vendor|system/vendor)/bin/init\.rcl\.smartamp_init\.sh      u:object_r:smartamp_init_exec:s0
 
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine u:object_r:hal_drm_widevine_exec:s0
+
 # Fingerprint
 /sys/devices/soc/soc:fpc1020(/.*)?                            u:object_r:fingerprint_sysfs:s0
 
