@@ -6,5 +6,5 @@ init_daemon_domain(smartamp_init)
 allow smartamp_init audio_device:dir search;
 allow smartamp_init audio_device:chr_file rw_file_perms;
 
-allow smartamp_init system_file:file execute_no_trans;
+allow smartamp_init vendor_tinyalsa_exec:file execute_no_trans;
 allow smartamp_init vendor_toolbox_exec:file execute_no_trans;
