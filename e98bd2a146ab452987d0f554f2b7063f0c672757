@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e10b3d0f_5da2d11e",
+        "filename": "Android.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 17793
+      },
+      "writtenOn": "2019-10-23T20:23:19Z",
+      "side": 1,
+      "message": "but here libEGL_adreno",
+      "revId": "e98bd2a146ab452987d0f554f2b7063f0c672757",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
