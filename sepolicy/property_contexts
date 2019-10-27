@@ -2,6 +2,9 @@
 persist.camera.                 u:object_r:camera_prop:s0
 persist.dualcam.                u:object_r:camera_prop:s0
 
+# cnss-daemon
+persist.vendor.wigig.npt.enable u:object_r:cnss_prop:s0
+
 # vendor_default_prop
 # default_prop isn't accessible from vendor components.
 # So vendor_default_prop should be marked.
