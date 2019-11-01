@@ -16,6 +16,24 @@
       "revId": "af9cb0d1d116b1f94a056f39ba28d2ca2f618b83",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "350182ee_bd0b5575",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-11-01T23:44:28Z",
+      "side": 0,
+      "message": "Correct, but we only need libEGL_adreno on cheryl. Since this tree is forked from xiaomi msm8998-common I\u0027d like to keep the commits the same for historical purposes (this is already merged in xiaomi months ago)",
+      "parentUuid": "8545fe38_5f6499e2",
+      "revId": "af9cb0d1d116b1f94a056f39ba28d2ca2f618b83",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
