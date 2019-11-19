@@ -55,7 +55,7 @@
 
 
 #define LOG_TAG "gpt-utils"
-#include <cutils/log.h>
+#include <log/log.h>
 #include <cutils/properties.h>
 #include "gpt-utils.h"
 #include <endian.h>
