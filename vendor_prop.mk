@@ -189,9 +189,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.mux_count=8 \
     persist.data.df.ul_mode=5
 
-# OEM Unlocking
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.oem_unlock_supported=true
+# OEM Unlock reporting
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
