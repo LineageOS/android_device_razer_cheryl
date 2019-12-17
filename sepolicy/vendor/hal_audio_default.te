@@ -1,1 +1,2 @@
 dontaudit hal_audio_default audio_prop:file read;
+dontaudit hal_audio_default sysfs:dir read;
