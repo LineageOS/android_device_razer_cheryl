@@ -1,1 +1,1 @@
-dontaudit thermal-engine sysfs:dir read;
+allow thermal-engine sysfs:dir r_dir_perms;
