@@ -8,8 +8,14 @@ ro.config.media_vol_default       u:object_r:exported2_config_prop:s0
 ro.config.vc_call_vol_default     u:object_r:exported2_config_prop:s0
 
 # Camera
+cameradaemon.SaveMemAtBoot        u:object_r:camera_prop:s0
+cpp.set.clock                     u:object_r:camera_prop:s0
+disable.cpp.power.collapse        u:object_r:camera_prop:s0
 persist.camera.                   u:object_r:camera_prop:s0
 persist.dualcam.                  u:object_r:camera_prop:s0
+ubwc.no.compression               u:object_r:camera_prop:s0
+vidc.enc.dcvs.extra-buff-count    u:object_r:camera_prop:s0
+video.disable.ubwc                u:object_r:camera_prop:s0
 
 # cnss-daemon
 persist.vendor.wigig.npt.enable   u:object_r:cnss_prop:s0
@@ -17,11 +23,9 @@ persist.vendor.wigig.npt.enable   u:object_r:cnss_prop:s0
 # vendor_default_prop
 # default_prop isn't accessible from vendor components.
 # So vendor_default_prop should be marked.
-cameradaemon.SaveMemAtBoot        u:object_r:vendor_default_prop:s0
 cda.skuid.brand                   u:object_r:vendor_default_prop:s0
 gpu.stats.debug.level             u:object_r:vendor_default_prop:s0
 persist.pressure.diff             u:object_r:vendor_default_prop:s0
 ro.build.software.version         u:object_r:vendor_default_prop:s0
 ro.product.nickname               u:object_r:vendor_default_prop:s0
 sdm.                              u:object_r:vendor_default_prop:s0
-vidc.enc.dcvs.extra-buff-count    u:object_r:vendor_default_prop:s0
