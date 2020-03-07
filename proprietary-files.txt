@@ -518,7 +518,7 @@ vendor/firmware/a540_zap.elf
 vendor/firmware/a540_zap.mdt
 
 # IMS
--app/uceShimService/uceShimService.apk|cfc9684be39064440d525d0090711a16d8ae1cc8
+-app/uceShimService/uceShimService.apk|0e5c3cefdb401c9053d117a9b0e963f203452d87
 lib64/lib-imscamera.so
 lib64/lib-imsvideocodec.so
 lib64/lib-imsvt.so
