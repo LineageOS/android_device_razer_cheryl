@@ -389,7 +389,7 @@ lib64/libdpmctmgr.so
 lib64/libdpmfdmgr.so
 lib64/libdpmframework.so
 lib64/libdpmtcm.so
--priv-app/dpmserviceapp/dpmserviceapp.apk|3cbed9f67500164b3d79becc5d9a61ae24f76d31
+-priv-app/dpmserviceapp/dpmserviceapp.apk|02f7d4aa5d4d94a5b29573d90b8baf85ef30e612
 vendor/bin/dpmQmiMgr
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
@@ -518,7 +518,7 @@ vendor/firmware/a540_zap.elf
 vendor/firmware/a540_zap.mdt
 
 # IMS
--app/uceShimService/uceShimService.apk|3ef0a246033038bf56798f1a50bdf12b2633f1b5
+-app/uceShimService/uceShimService.apk|cfc9684be39064440d525d0090711a16d8ae1cc8
 lib64/lib-imscamera.so
 lib64/lib-imsvideocodec.so
 lib64/lib-imsvt.so
