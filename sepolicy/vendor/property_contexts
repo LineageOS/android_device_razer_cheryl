@@ -24,6 +24,7 @@ persist.vendor.wigig.npt.enable   u:object_r:cnss_prop:s0
 # default_prop isn't accessible from vendor components.
 # So vendor_default_prop should be marked.
 cda.skuid.brand                   u:object_r:vendor_default_prop:s0
+fpc_kpi                           u:object_r:vendor_default_prop:s0
 gpu.stats.debug.level             u:object_r:vendor_default_prop:s0
 persist.pressure.diff             u:object_r:vendor_default_prop:s0
 ro.build.software.version         u:object_r:vendor_default_prop:s0
