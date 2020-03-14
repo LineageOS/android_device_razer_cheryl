@@ -1,6 +1,4 @@
 # Audio
-audio.sys.noisy.broadcast.delay   u:object_r:exported3_default_prop:s0
-audio.sys.offload.pstimeout.secs  u:object_r:exported3_default_prop:s0
 ro.config.alarm_vol_default       u:object_r:exported2_config_prop:s0
 ro.config.alarm_vol_steps         u:object_r:exported2_config_prop:s0
 ro.config.media_vol_default       u:object_r:exported2_config_prop:s0
