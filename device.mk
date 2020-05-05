@@ -173,8 +173,12 @@ PRODUCT_PACKAGES += \
     libui_shim
 
 PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.4:64 \
+    android.hardware.camera.device@3.5:64 \
+    android.hardware.camera.provider@2.4:64 \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.5:64
 
 # Display
 PRODUCT_PACKAGES += \
