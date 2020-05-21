@@ -151,7 +151,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=0 \
     persist.dbg.vt_avail_ovr=0 \
-    persist.dbg.wfc_avail_ovr=0 \
+    persist.dbg.wfc_avail_ovr=1 \
     persist.rcs.supported=0
 
 # Media
