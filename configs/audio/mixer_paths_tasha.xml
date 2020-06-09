@@ -2245,6 +2245,10 @@
         <ctl name="QUAT_MI2S_RX Format" value="S24_LE" />
     </path>
 
+    <path name="speaker-reverse">
+        <path name="speaker" />
+    </path>
+
     <path name="speaker-fluid">
     </path>
 
