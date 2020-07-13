@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := razer
-
 DEVICE_PATH := device/razer/cheryl
 
 BUILD_BROKEN_DUP_RULES := true
