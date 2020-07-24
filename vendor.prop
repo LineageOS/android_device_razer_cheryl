@@ -148,7 +148,6 @@ vendor.vidc.dec.120fps.enabled=1
 vendor.vidc.dec.drc.enable=1
 
 # Media
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 
 # Network manager
