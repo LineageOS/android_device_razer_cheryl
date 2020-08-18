@@ -1,1 +1,1 @@
-type cnss_prop, property_type;
+vendor_public_prop(cnss_prop)
