@@ -1,5 +1,5 @@
 java_library {
-    name: "ims-ext-common_system",
+    name: "ims-ext-common_system.cheryl",
     installable: true,
     static_libs: [
         "ims-ext-common",

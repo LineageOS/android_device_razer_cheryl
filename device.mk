@@ -246,10 +246,10 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common_system
+    ims-ext-common_system.cheryl
 
 PRODUCT_BOOT_JARS += \
-    ims-ext-common_system
+    ims-ext-common_system.cheryl
 
 # IRQ
 PRODUCT_COPY_FILES += \
