@@ -185,6 +185,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
+    persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     ro.telephony.call_ring.multiple=false \
