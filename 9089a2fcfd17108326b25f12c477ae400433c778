@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f45a10a2_c6678035",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18220
+      },
+      "writtenOn": "2020-09-27T14:37:28Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it suppose to be fingerprint and not wifi here?",
+      "revId": "9089a2fcfd17108326b25f12c477ae400433c778",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
