@@ -65,8 +65,8 @@ function blob_fixup() {
     lib64/libwfdnative.so)
         patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
-    vendor/etc/permissions/qcrilhook.xml)
-        sed -i 's|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g' "${2}"
+    product/etc/permissions/qcrilhook.xml)
+        sed -i 's|/system/framework/qcrilhook.jar|/system/product/framework/qcrilhook.jar|g' "${2}"
         ;;
     vendor/lib/hw/camera.msm8998.so)
         patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
