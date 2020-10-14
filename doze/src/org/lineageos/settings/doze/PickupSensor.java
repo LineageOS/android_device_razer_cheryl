@@ -67,7 +67,7 @@ public class PickupSensor {
         @Override
         public void onTrigger(TriggerEvent event) {
             if (DEBUG) Log.d(TAG, "Triggered");
-            Utils.launchDozePulse(mContext);
+            Utils.wakeOrLaunchDozePulse(mContext);
             enable();
         }
     };
