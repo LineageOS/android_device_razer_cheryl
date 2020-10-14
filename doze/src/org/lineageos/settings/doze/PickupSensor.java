@@ -68,7 +68,7 @@ public class PickupSensor {
         public void onTrigger(TriggerEvent event) {
             if (DEBUG) Log.d(TAG, "Got trigger event: " + event.values[0]);
             if (event.values[0] == 1) {
-                Utils.launchDozePulse(mContext);
+                Utils.wakeOrLaunchDozePulse(mContext);
             }
         }
     };
