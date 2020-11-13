@@ -173,7 +173,8 @@ PRODUCT_PACKAGES += \
     android.frameworks.cameraservice.device@2.0.vendor \
     android.frameworks.cameraservice.service@2.1.vendor \
     libgui_shim \
-    libui_shim.vendor:32
+    libui_shim.vendor:32 \
+    vendor.qti.hardware.camera.device@1.0
 
 # Control groups and task profiles
 PRODUCT_COPY_FILES += \
