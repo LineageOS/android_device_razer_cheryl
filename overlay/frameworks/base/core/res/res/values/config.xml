@@ -17,59 +17,615 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
+    <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
 
-    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
-         The N entries of this array define N  1 zones as follows:
+    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
+         The N entries of this array define N + 1 control points as follows:
+         (1-based arrays)
 
-         Zone 0:        0 <= LUX < array[0]
-         Zone 1:        array[0] <= LUX < array[1]
+         Point 1:            (0, value[1]):             lux <= 0
+         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
+         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
          ...
-         Zone N:        array[N - 1] <= LUX < array[N]
-         Zone N + 1     array[N] <= LUX < infinity
+         Point N+1: (level[N], value[N+1]):  level[N] < lux
+
+         The control points must be strictly increasing.  Each control point
+         corresponds to an entry in the brightness backlight values arrays.
+         For example, if lux == level[1] (first element of the levels array)
+         then the brightness will be determined by value[2] (second element
+         of the brightness values array).
+
+         Spline interpolation is used to determine the auto-brightness
+         backlight values for lux levels between these control points.
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>1</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
         <item>20</item>
-        <item>40</item>
-        <item>100</item>
-        <item>325</item>
-        <item>600</item>
-        <item>1250</item>
-        <item>2200</item>
-        <item>4000</item>
-        <item>10000</item>
+        <item>33</item>
+        <item>55</item>
+        <item>90</item>
+        <item>148</item>
+        <item>245</item>
+        <item>403</item>
+        <item>665</item>
+        <item>1097</item>
+        <item>1808</item>
+        <item>2981</item>
+        <item>5000</item>
     </integer-array>
 
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>8</item>
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>5</item>
+        <item>11</item>
         <item>15</item>
+        <item>23</item>
+        <item>56</item>
+        <item>67</item>
+        <item>83</item>
+        <item>100</item>
+        <item>110</item>
+        <item>128</item>
+        <item>171</item>
+        <item>217</item>
+        <item>258</item>
+        <item>298</item>
+        <item>355.8</item>
+        <item>355.8</item>
+    </array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
         <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
         <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
+        <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
         <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>104</item>
+        <item>105</item>
+        <item>106</item>
+        <item>107</item>
+        <item>108</item>
+        <item>109</item>
+        <item>110</item>
+        <item>111</item>
+        <item>112</item>
+        <item>113</item>
+        <item>114</item>
+        <item>115</item>
+        <item>116</item>
+        <item>117</item>
+        <item>118</item>
+        <item>119</item>
         <item>120</item>
+        <item>121</item>
+        <item>122</item>
+        <item>123</item>
+        <item>124</item>
+        <item>125</item>
+        <item>126</item>
+        <item>127</item>
+        <item>128</item>
+        <item>129</item>
+        <item>130</item>
+        <item>131</item>
+        <item>132</item>
+        <item>133</item>
+        <item>134</item>
+        <item>135</item>
+        <item>136</item>
+        <item>137</item>
+        <item>138</item>
+        <item>139</item>
+        <item>140</item>
+        <item>141</item>
+        <item>142</item>
+        <item>143</item>
+        <item>144</item>
+        <item>145</item>
+        <item>146</item>
+        <item>147</item>
+        <item>148</item>
+        <item>149</item>
         <item>150</item>
+        <item>151</item>
+        <item>152</item>
+        <item>153</item>
+        <item>154</item>
+        <item>155</item>
+        <item>156</item>
+        <item>157</item>
+        <item>158</item>
+        <item>159</item>
+        <item>160</item>
+        <item>161</item>
+        <item>162</item>
+        <item>163</item>
+        <item>164</item>
+        <item>165</item>
+        <item>166</item>
+        <item>167</item>
+        <item>168</item>
+        <item>169</item>
+        <item>170</item>
+        <item>171</item>
+        <item>172</item>
+        <item>173</item>
+        <item>174</item>
+        <item>175</item>
+        <item>176</item>
+        <item>177</item>
+        <item>178</item>
+        <item>179</item>
         <item>180</item>
+        <item>181</item>
+        <item>182</item>
+        <item>183</item>
+        <item>184</item>
+        <item>185</item>
+        <item>186</item>
+        <item>187</item>
+        <item>188</item>
+        <item>189</item>
+        <item>190</item>
+        <item>191</item>
+        <item>192</item>
+        <item>193</item>
+        <item>194</item>
+        <item>195</item>
+        <item>196</item>
+        <item>197</item>
+        <item>198</item>
+        <item>199</item>
+        <item>200</item>
+        <item>201</item>
+        <item>202</item>
+        <item>203</item>
+        <item>204</item>
+        <item>205</item>
+        <item>206</item>
+        <item>207</item>
+        <item>208</item>
+        <item>209</item>
+        <item>210</item>
+        <item>211</item>
+        <item>212</item>
+        <item>213</item>
+        <item>214</item>
+        <item>215</item>
+        <item>216</item>
+        <item>217</item>
+        <item>218</item>
+        <item>219</item>
+        <item>220</item>
+        <item>221</item>
+        <item>222</item>
+        <item>223</item>
+        <item>224</item>
+        <item>225</item>
+        <item>226</item>
+        <item>227</item>
+        <item>228</item>
+        <item>229</item>
         <item>230</item>
-        <item>255</item>
+        <item>231</item>
+        <item>232</item>
+        <item>233</item>
+        <item>234</item>
+        <item>235</item>
+        <item>236</item>
+        <item>237</item>
+        <item>238</item>
+        <item>239</item>
+        <item>240</item>
+        <item>241</item>
+        <item>242</item>
+        <item>243</item>
+        <item>244</item>
+        <item>245</item>
+        <item>246</item>
+        <item>247</item>
+        <item>248</item>
+        <item>249</item>
+        <item>250</item>
+        <item>251</item>
+        <item>252</item>
+        <item>253</item>
+        <item>254</item>
         <item>255</item>
     </integer-array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <array name="config_screenBrightnessNits">
+        <item>0.35</item>
+        <item>1.22</item>
+        <item>2.66</item>
+        <item>4.17</item>
+        <item>5.68</item>
+        <item>7.22</item>
+        <item>8.7</item>
+        <item>10.37</item>
+        <item>11.9</item>
+        <item>13.46</item>
+        <item>15.01</item>
+        <item>16.57</item>
+        <item>18.17</item>
+        <item>19.8</item>
+        <item>21.4</item>
+        <item>23.04</item>
+        <item>24.4</item>
+        <item>25.9</item>
+        <item>27.45</item>
+        <item>28.99</item>
+        <item>30.52</item>
+        <item>32.04</item>
+        <item>33.58</item>
+        <item>35.1</item>
+        <item>36.64</item>
+        <item>38.16</item>
+        <item>39.7</item>
+        <item>41.2</item>
+        <item>42.7</item>
+        <item>44.2</item>
+        <item>45.8</item>
+        <item>47.3</item>
+        <item>48.8</item>
+        <item>50.3</item>
+        <item>51.87</item>
+        <item>53.4</item>
+        <item>54.9</item>
+        <item>56.4</item>
+        <item>57.9</item>
+        <item>59.4</item>
+        <item>60.9</item>
+        <item>62.4</item>
+        <item>63.9</item>
+        <item>65.4</item>
+        <item>66.98</item>
+        <item>68.5</item>
+        <item>69.95</item>
+        <item>71.5</item>
+        <item>72.9</item>
+        <item>74.45</item>
+        <item>75.95</item>
+        <item>77.4</item>
+        <item>78.9</item>
+        <item>80.4</item>
+        <item>81.9</item>
+        <item>83.3</item>
+        <item>84.8</item>
+        <item>86.3</item>
+        <item>87.8</item>
+        <item>89.28</item>
+        <item>90.75</item>
+        <item>92.2</item>
+        <item>93.65</item>
+        <item>95.15</item>
+        <item>96.5</item>
+        <item>97.85</item>
+        <item>99.27</item>
+        <item>100.7</item>
+        <item>102.1</item>
+        <item>103.5</item>
+        <item>104.9</item>
+        <item>106.3</item>
+        <item>107.7</item>
+        <item>109.1</item>
+        <item>110.5</item>
+        <item>111.9</item>
+        <item>113.2</item>
+        <item>114.5</item>
+        <item>115.8</item>
+        <item>116.3</item>
+        <item>116.9</item>
+        <item>117.2</item>
+        <item>118.5</item>
+        <item>119.7</item>
+        <item>121.0</item>
+        <item>122.3</item>
+        <item>123.5</item>
+        <item>124.8</item>
+        <item>126.0</item>
+        <item>127.3</item>
+        <item>128.6</item>
+        <item>129.8</item>
+        <item>131.1</item>
+        <item>132.4</item>
+        <item>133.6</item>
+        <item>135.0</item>
+        <item>136.9</item>
+        <item>138.2</item>
+        <item>139.4</item>
+        <item>140.8</item>
+        <item>142.0</item>
+        <item>143.4</item>
+        <item>144.7</item>
+        <item>146.1</item>
+        <item>147.4</item>
+        <item>148.9</item>
+        <item>150.3</item>
+        <item>151.8</item>
+        <item>153.3</item>
+        <item>154.9</item>
+        <item>156.4</item>
+        <item>158.0</item>
+        <item>159.2</item>
+        <item>160.8</item>
+        <item>162.4</item>
+        <item>163.9</item>
+        <item>165.4</item>
+        <item>166.8</item>
+        <item>168.3</item>
+        <item>169.8</item>
+        <item>171.3</item>
+        <item>172.9</item>
+        <item>174.4</item>
+        <item>175.8</item>
+        <item>177.4</item>
+        <item>179.0</item>
+        <item>180.4</item>
+        <item>182.0</item>
+        <item>183.4</item>
+        <item>184.8</item>
+        <item>186.4</item>
+        <item>188.0</item>
+        <item>189.5</item>
+        <item>191.1</item>
+        <item>192.7</item>
+        <item>194.3</item>
+        <item>196.8</item>
+        <item>199.4</item>
+        <item>201.1</item>
+        <item>202.7</item>
+        <item>204.0</item>
+        <item>205.5</item>
+        <item>206.9</item>
+        <item>208.2</item>
+        <item>209.6</item>
+        <item>211.0</item>
+        <item>212.4</item>
+        <item>213.7</item>
+        <item>215.2</item>
+        <item>216.5</item>
+        <item>217.9</item>
+        <item>219.2</item>
+        <item>220.6</item>
+        <item>222.0</item>
+        <item>223.3</item>
+        <item>224.7</item>
+        <item>226.1</item>
+        <item>227.5</item>
+        <item>228.9</item>
+        <item>230.3</item>
+        <item>231.6</item>
+        <item>233.0</item>
+        <item>234.3</item>
+        <item>235.7</item>
+        <item>237.0</item>
+        <item>238.4</item>
+        <item>239.9</item>
+        <item>241.2</item>
+        <item>242.5</item>
+        <item>244.0</item>
+        <item>245.5</item>
+        <item>246.6</item>
+        <item>248.0</item>
+        <item>249.3</item>
+        <item>250.7</item>
+        <item>252.0</item>
+        <item>253.4</item>
+        <item>254.7</item>
+        <item>256.0</item>
+        <item>257.4</item>
+        <item>258.8</item>
+        <item>260.1</item>
+        <item>261.4</item>
+        <item>262.8</item>
+        <item>264.2</item>
+        <item>265.6</item>
+        <item>266.9</item>
+        <item>268.3</item>
+        <item>269.6</item>
+        <item>271.0</item>
+        <item>272.3</item>
+        <item>273.8</item>
+        <item>275.1</item>
+        <item>276.4</item>
+        <item>277.7</item>
+        <item>279.1</item>
+        <item>280.3</item>
+        <item>281.7</item>
+        <item>283.0</item>
+        <item>284.3</item>
+        <item>285.6</item>
+        <item>287.0</item>
+        <item>288.3</item>
+        <item>289.7</item>
+        <item>290.9</item>
+        <item>292.3</item>
+        <item>293.7</item>
+        <item>294.9</item>
+        <item>296.3</item>
+        <item>297.5</item>
+        <item>298.8</item>
+        <item>300.3</item>
+        <item>301.6</item>
+        <item>303.0</item>
+        <item>304.4</item>
+        <item>305.5</item>
+        <item>306.9</item>
+        <item>308.2</item>
+        <item>309.5</item>
+        <item>310.8</item>
+        <item>312.2</item>
+        <item>313.6</item>
+        <item>314.8</item>
+        <item>316.1</item>
+        <item>317.4</item>
+        <item>318.7</item>
+        <item>320.0</item>
+        <item>321.3</item>
+        <item>322.5</item>
+        <item>323.8</item>
+        <item>325.3</item>
+        <item>326.5</item>
+        <item>327.7</item>
+        <item>328.8</item>
+        <item>330.3</item>
+        <item>331.6</item>
+        <item>332.8</item>
+        <item>334.2</item>
+        <item>335.4</item>
+        <item>336.7</item>
+        <item>338.0</item>
+        <item>339.2</item>
+        <item>340.5</item>
+        <item>341.8</item>
+        <item>343.1</item>
+        <item>344.4</item>
+        <item>345.6</item>
+        <item>346.8</item>
+        <item>348.0</item>
+        <item>349.3</item>
+        <item>350.6</item>
+        <item>352.0</item>
+        <item>353.2</item>
+        <item>354.4</item>
+        <item>355.8</item>
+    </array>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">1</integer>
+    <integer name="config_screenBrightnessDim">6</integer>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">128</integer>
+    <integer name="config_screenBrightnessSettingDefault">80</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -80,8 +636,8 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">6000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">3000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">5000</integer>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
