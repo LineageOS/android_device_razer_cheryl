@@ -1019,6 +1019,9 @@
         <item>2</item> <!-- COLOR_MODE_SATURATED -->
     </integer-array>
 
+    <!-- Maximum color temperature, in Kelvin, supported by Night display. -->
+    <integer name="config_nightDisplayColorTemperatureMax">6123</integer>
+
     <!-- Values for GPS configuration -->
     <string-array name="config_gpsParameters">
         <item>SUPL_HOST=supl.google.com</item>
