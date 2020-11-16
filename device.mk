@@ -170,7 +170,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
-    libui_shim
+    libui_shim.vendor:32
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.4:64 \
@@ -252,7 +252,8 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    ims_ext_common.xml
+    ims_ext_common.xml \
+    libui_shim:64
 
 # IRQ
 PRODUCT_COPY_FILES += \
