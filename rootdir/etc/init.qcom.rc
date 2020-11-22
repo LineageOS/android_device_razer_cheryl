@@ -175,8 +175,9 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-    chown system system /proc/AllHWList/tp_double_tap
-    chmod 644 /proc/AllHWList/tp_double_tap
+    # Touchscreen
+    chown system system /sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input1/wake_gesture
+    chmod 0660 /sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input1/wake_gesture
 
 on property:sys.boot_completed=1
     # Used by sound trigger HAL
