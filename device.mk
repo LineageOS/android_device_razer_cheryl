@@ -188,7 +188,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
-    liboverlay \
     libqdMetaData.system \
     libtinyxml
 
