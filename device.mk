@@ -368,12 +368,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.rcl.smartamp_init.sh
 
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
-
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl
