@@ -68,19 +68,27 @@ function blob_fixup() {
             sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
             ;;
         system_ext/lib64/lib-imsvideocodec.so)
-            "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            for LIBUI_SHIM in $(grep -L "libui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM"
+            done
             ;;
         system_ext/lib64/libdpmframework.so)
-            "${PATCHELF}" --add-needed "libshim_dpmframework.so" "${2}"
+            for LIBDPM_SHIM in $(grep -L "libshim_dpmframework.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libshim_dpmframework.so" "$LIBDPM_SHIM"
+            done
             ;;
         vendor/lib/hw/camera.msm8998.so)
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             ;;
         vendor/lib/libdczoom.so)
-            "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            for LIBUI_SHIM2 in $(grep -L "libui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM2"
+            done
             ;;
         vendor/lib/libfusionLibrary.so)
-            "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            for LIBUI_SHIM3 in $(grep -L "libui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM3"
+            done
             ;;
     esac
 }
