@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa45bc07_28460071",
+        "filename": "extract-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-02-18T09:15:24Z",
+      "side": 1,
+      "message": "No need to do it for removals",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 16
+      },
+      "revId": "d9852ec2298d6f368af6e99bef2075c2338db5cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13b2615f_7d56a590",
+        "filename": "extract-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-02-18T09:15:24Z",
+      "side": 1,
+      "message": "Single space here and below",
+      "range": {
+        "startLine": 73,
+        "startChar": 15,
+        "endLine": 73,
+        "endChar": 17
+      },
+      "revId": "d9852ec2298d6f368af6e99bef2075c2338db5cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0a5fcb0_75e3c2dd",
+        "filename": "extract-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-02-18T09:15:24Z",
+      "side": 1,
+      "message": "Same",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 16
+      },
+      "revId": "d9852ec2298d6f368af6e99bef2075c2338db5cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
