@@ -6,7 +6,7 @@
    "remote": "github"
   },
    "repository": "zknb-666/android_vendor_razer_cheryl",
-   "target_path": "zknb-666/razer/cheryl",
+   "target_path": "vendor/razer/cheryl",
    "branch": "exthm-10",
    "remote": "github"
   }
