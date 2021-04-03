@@ -134,7 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=0 \
     vendor.display.perf_hint_window=50 \
-    vendor.display.res_switch_en=0 \
+    vendor.display.res_switch_en=1 \
     vendor.gralloc.enable_fb_ubwc=1
 
 # DPM
