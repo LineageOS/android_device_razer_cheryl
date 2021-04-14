@@ -369,6 +369,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
     librmnetctl
 
 # Seccomp policy
