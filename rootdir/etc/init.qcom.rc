@@ -188,29 +188,29 @@ service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     shutdown critical
     ioprio rt 0
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.tftp_server /vendor/bin/tftp_server
     class core
     user root
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.dataqti /vendor/bin/qti
     class main
     user radio
     group radio oem_2901 diag usb net_admin
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.sensors /vendor/bin/sensors.qti
     class main
@@ -219,14 +219,14 @@ service vendor.sensors /vendor/bin/sensors.qti
     # Grants the ability for this daemon to bind IPC router ports so it can
     # register QMI services
     capabilities NET_BIND_SERVICE
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 on property:sys.shutdown.requested=*
     stop vendor.cnss-daemon
@@ -235,7 +235,7 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     class late_start
     user gps
     group gps
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 on property:persist.sys.xtra-daemon.enabled=*
     restart vendor.loc_launcher
@@ -245,7 +245,7 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
@@ -263,13 +263,13 @@ service vendor.qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     user root
     disabled
     oneshot
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service charger /system/bin/charger
     class charger
@@ -277,19 +277,19 @@ service charger /system/bin/charger
     group system graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
