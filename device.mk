@@ -459,8 +459,5 @@ PRODUCT_PACKAGES += \
     libmediaextractorservice \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # Call the proprietary setup
 $(call inherit-product, vendor/razer/cheryl/cheryl-vendor.mk)
