@@ -175,6 +175,11 @@ PRODUCT_PACKAGES += \
     Snap \
     libui_shim.vendor:32
 
+# Control groups and task profiles
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.4:64 \
     android.hardware.camera.device@3.5:64 \
