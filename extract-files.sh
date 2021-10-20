@@ -64,7 +64,15 @@ function blob_fixup() {
         system_ext/etc/permissions/qcrilhook.xml)
             sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
             ;;
+        system_ext/lib64/lib-imscamera.so)
+            for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
+            done
+            ;;
         system_ext/lib64/lib-imsvideocodec.so)
+            for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
+            done
             for LIBUI_SHIM in $(grep -L "libui_shim.so" "${2}"); do
                 "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM"
             done
