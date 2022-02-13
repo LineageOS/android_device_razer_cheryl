@@ -133,6 +133,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_metadata_dynamic_fps=1 \
     vendor.display.disable_partial_split=1 \
     vendor.display.disable_rotator_downscale=1 \
+    vendor.display.disable_scaler=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=0 \
     vendor.display.perf_hint_window=50 \
