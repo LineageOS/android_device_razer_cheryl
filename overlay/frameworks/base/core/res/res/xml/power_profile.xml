@@ -21,8 +21,8 @@
 
     <!-- All values are in mAh except as noted -->
     <item name="none">0</item>
-    <item name="screen.on">95</item>
-    <item name="screen.full">425</item>
+    <item name="screen.on.display0">95</item>
+    <item name="screen.full.display0">425</item>
     <item name="bluetooth.active">45</item>
     <item name="bluetooth.on">0.6</item>
     <item name="wifi.on">8</item>
