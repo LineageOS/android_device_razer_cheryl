@@ -16,6 +16,24 @@
       "message": "Why does it seems that you squashed I75ba312895d18eae8c89db4dbb24a6945bad9860 here?",
       "revId": "1010c5cd2ee665eca49f5e6ca56fe8e372902de4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fde4cb3e_25da5d74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-04-18T18:01:22Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "78cddb10_be41519a",
+      "revId": "1010c5cd2ee665eca49f5e6ca56fe8e372902de4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
