@@ -1,0 +1,1 @@
+allow qti_init_shell data_rfs_shared_hlos_file:file { getattr read };
