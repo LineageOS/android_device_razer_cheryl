@@ -1,2 +1,4 @@
 hal_client_domain(hal_camera_default, hal_configstore)
 hal_client_domain(hal_camera_default, hal_graphics_allocator)
+
+get_prop(hal_camera_default, bootanim_system_prop)
