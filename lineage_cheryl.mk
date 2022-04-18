@@ -42,4 +42,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-razer
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="cheryl-user 7.1.1 NMF26X-RZR-180118 3005 release-keys"
 
-BUILD_FINGERPRINT=razer/cheryl/cheryl:7.1.1/NMF26X-RZR-180118/3005:user/release-keys
+BUILD_FINGERPRINT := razer/cheryl/cheryl:7.1.1/NMF26X-RZR-180118/3005:user/release-keys
