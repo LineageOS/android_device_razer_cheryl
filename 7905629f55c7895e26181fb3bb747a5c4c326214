@@ -16,6 +16,24 @@
       "message": "Change https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/329091/1/legacy/vendor/common/cnd.te to wifi_hal_prop ?",
       "revId": "7905629f55c7895e26181fb3bb747a5c4c326214",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0879d5c4_f343d3ae",
+        "filename": "sepolicy/vendor/cnd.te",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-04-18T18:59:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1908b905_11734158",
+      "revId": "7905629f55c7895e26181fb3bb747a5c4c326214",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
