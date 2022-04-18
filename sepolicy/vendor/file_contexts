@@ -12,6 +12,9 @@
 # Fingerprint
 /sys/devices/soc/soc:fpc1020(/.*)?                            u:object_r:fingerprint_sysfs:s0
 
+# Input nodes
+/sys/devices/soc/c179000\.i2c/i2c-5/5-[0-9a-f]+(/input/input[0-9])?/wake_gesture u:object_r:sysfs_sectouch:s0
+
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.cheryl u:object_r:hal_light_default_exec:s0
 
