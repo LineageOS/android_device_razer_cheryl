@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67590da8_8fd9bf5c",
+        "filename": "doze/res/values/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-04-18T22:00:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06951e15_bf551d3f",
+      "range": {
+        "startLine": 16,
+        "startChar": 18,
+        "endLine": 16,
+        "endChar": 32
+      },
+      "revId": "51cb2b7f35c6a8f3340999cf8a64704632bdb139",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee3c317b_a3938ce8",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-04-18T21:33:04Z",
       "side": 1,
       "message": "ambient_display_enable_title",
+      "range": {
+        "startLine": 24,
+        "startChar": 31,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "51cb2b7f35c6a8f3340999cf8a64704632bdb139",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc3717de_75d6267c",
+        "filename": "doze/res/xml/doze_settings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-04-18T22:00:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee3c317b_a3938ce8",
       "range": {
         "startLine": 24,
         "startChar": 31,
