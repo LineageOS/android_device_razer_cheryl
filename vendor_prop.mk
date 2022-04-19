@@ -128,6 +128,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
+    renderthread.skia.reduceopstasksplitting=true \
     ro.opengles.version=196610 \
     ro.vendor.display.cabl=0 \
     vendor.display.disable_metadata_dynamic_fps=1 \
