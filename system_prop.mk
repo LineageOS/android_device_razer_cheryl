@@ -18,6 +18,10 @@
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     vendor.camera.aux.packagelist=com.razer.camera,org.lineageos.snap,com.razerzone.camera
 
+# DPM
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.vendor.dpm.feature=1
+
 # Voice assistant
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.opa.eligible_device=true
