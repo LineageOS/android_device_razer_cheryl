@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02121941_4f919107",
+        "filename": "vendor_prop.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2022-04-20T16:27:35Z",
+      "side": 1,
+      "message": "the other props here are sorted alphabetically, this should be moved up to line 136",
+      "revId": "20055758dae889fc4beb24888bccf36b6e6f987d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
