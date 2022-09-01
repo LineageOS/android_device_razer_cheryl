@@ -232,6 +232,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
 
+# USB
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.usb.rmnet.func.name=rmnet_bam \
+    vendor.usb.rmnet.inst.name=rmnet \
+    vendor.usb.rndis.func.name=rndis_bam
+
 # Widevine
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
