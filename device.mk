@@ -166,7 +166,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 PRODUCT_PACKAGES += \
     libgui_shim \
-    libui_shim.vendor:32
+    libui_shim.vendor_32
 
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor:32 \

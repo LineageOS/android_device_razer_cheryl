@@ -14,15 +14,6 @@
 // limitations under the License.
 //
 
-cc_library_shared {
-    name: "libui_shim",
-
-    srcs: ["GraphicBuffer.cpp"],
-    shared_libs: ["libui"],
-
-    vendor_available: true,
-}
-
 // libgui
 cc_library {
     name: "libgui_shim",
