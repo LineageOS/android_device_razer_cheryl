@@ -294,16 +294,6 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     disabled
     oneshot
 
-service vendor.amp-init-sh /vendor/bin/init.rcl.smartamp_init.sh
-    class main
-    user system
-    group system
-    disabled
-    oneshot
-
-on property:sys.boot_completed=1
-    start vendor.amp-init-sh
-
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
