@@ -1,6 +1,3 @@
-# Camera
-vendor.camera.aux.packagelist=com.razer.camera,org.lineageos.snap,com.razerzone.camera
-
 # DPM
 persist.vendor.dpm.feature=1
 
