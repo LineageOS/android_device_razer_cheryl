@@ -202,6 +202,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
+    ro.telephony.block_binder_thread_on_incoming_calls=false \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=20 \
     ro.vendor.use_data_netmgrd=true \
