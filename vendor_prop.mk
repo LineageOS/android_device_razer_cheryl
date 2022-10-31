@@ -209,6 +209,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     vendor.voice.path.for.pcm.voip=false
 
+# RIL
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.telephony.block_binder_thread_on_incoming_calls=false
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.sensors.direct_channel=true \
