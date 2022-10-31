@@ -22,6 +22,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.vendor.dpm.feature=1
 
+# RIL
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.telephony.block_binder_thread_on_incoming_calls=false
+
 # Voice assistant
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.opa.eligible_device=true
