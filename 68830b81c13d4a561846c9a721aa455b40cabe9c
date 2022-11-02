@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccb52685_5e6b026b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-11-02T10:41:32Z",
+      "side": 1,
+      "message": "You do NOT need this, unless you use USB scripts directly from QTI USB HAL project.",
+      "revId": "68830b81c13d4a561846c9a721aa455b40cabe9c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
