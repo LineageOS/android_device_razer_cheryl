@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db0c041c_3fea3cbb",
+        "filename": "device.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-11-02T10:39:46Z",
+      "side": 1,
+      "message": "Remove this. It doesn\u0027t apply anymore.",
+      "range": {
+        "startLine": 150,
+        "startChar": 41,
+        "endLine": 150,
+        "endChar": 44
+      },
+      "revId": "ecb2f4660a95ee432ad17db0ca38d5abb214b580",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
