@@ -16,6 +16,24 @@
       "message": "You are changing the server\u0027s URL as well.",
       "revId": "fd0b99de820cb7520eb7fad3baacbfe387ed9806",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b99ebed8_b7c36f30",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-11-03T15:14:17Z",
+      "side": 1,
+      "message": "Moreover, the frameworks only loads these \"props\" from /system/etc/gps_debug.conf.",
+      "parentUuid": "7bbd9f56_470a012b",
+      "revId": "fd0b99de820cb7520eb7fad3baacbfe387ed9806",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
