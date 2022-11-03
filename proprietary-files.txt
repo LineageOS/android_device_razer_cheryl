@@ -3,8 +3,8 @@ vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
-vendor/lib64/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
 
 # ADSP modules
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
@@ -42,6 +42,7 @@ vendor/firmware/tfa98xx.cnt
 
 # Audio libraries
 vendor/etc/audio/silence_48k.wav
+vendor/lib/soundfx/libasphere.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -49,7 +50,6 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
-vendor/lib/soundfx/libasphere.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -61,8 +61,8 @@ lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so
 -lib/libantradio.so:system_ext/lib/libantradio.so
 lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 -lib64/libantradio.so:system_ext/lib64/libantradio.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Bluetooth FM
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
@@ -162,89 +162,89 @@ vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_4k_video_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_720p_preview_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_720p_video_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_common.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_120_hdr.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_120.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_240_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_120_hdr.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_240.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_60_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_240_hdr.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_60.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_hfr_60_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_liveshot.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_liveshot_1080.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_liveshot_4k.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_liveshot_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_liveshot.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_preview.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_preview_1080.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_preview_4k.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_preview_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_preview.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_1080_hdr.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_1080.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_4k_hdr.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_4k.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_720_hdr.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_hdr.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_1080.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_1080_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_4k.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_4k_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_720.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_720_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_snapshot_hdr.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_video.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_video_1080.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_video_4k.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_video_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_cpp_video.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_default_preview_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_default_video_3a.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_120_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_120.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_240_3a.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_120_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_240.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_60_3a.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_240_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_60.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_hfr_60_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_postproc.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_preview.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_preview_1080.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_preview_4k.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_preview_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_preview.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_snapshot.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_snapshot_1080.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_snapshot_4k.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_snapshot_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_snapshot.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_versions.so
+vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_video.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_video_1080.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_video_4k.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_video_720.so
-vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_video.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_zsl_preview_3a.so
 vendor/lib/libchromatix_s5k2l7sa05_rcl_wide_zsl_video_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_4k_preview_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_4k_video_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_common.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_120_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_120.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_60_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_120_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_60.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_90_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_60_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_90.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_liveshot_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_hfr_90_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_liveshot.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_preview_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_liveshot_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_preview.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_snapshot_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_preview_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_snapshot.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video_4k_hdr.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video_4k.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_snapshot_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video_4k.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video_4k_hdr.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_cpp_video_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_default_preview_3a.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_default_video_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_default_video.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_120_3a.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_default_video_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_120.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_60_3a.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_120_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_60.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_90_3a.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_60_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_90.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_hfr_90_3a.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_liveshot.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_postproc.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_preview.so
-vendor/lib/libchromatix_s5k3h7_rcl_front_snapshot_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_snapshot.so
+vendor/lib/libchromatix_s5k3h7_rcl_front_snapshot_hdr.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_versions.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_video_4k.so
 vendor/lib/libchromatix_s5k3h7_rcl_front_zsl_preview_3a.so
@@ -252,29 +252,29 @@ vendor/lib/libchromatix_s5k3h7_rcl_front_zsl_video_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_4k_preview_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_4k_video_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_common.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_hfr_120_hdr.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_hfr_120.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_hfr_60_hdr.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_hfr_120_hdr.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_hfr_60.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_hfr_60_hdr.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_liveshot.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_preview.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_snapshot_hdr.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_snapshot.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_video_4k.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_snapshot_hdr.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_video.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_cpp_video_4k.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_default_preview_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_default_video_3a.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_hfr_120_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_hfr_120.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_hfr_60_3a.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_hfr_120_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_hfr_60.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_hfr_60_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_liveshot.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_postproc.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_preview.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_snapshot.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_versions.so
-vendor/lib/libchromatix_s5k3m3sm_rcl_tele_video_4k.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_video.so
+vendor/lib/libchromatix_s5k3m3sm_rcl_tele_video_4k.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_zsl_preview_3a.so
 vendor/lib/libchromatix_s5k3m3sm_rcl_tele_zsl_video_3a.so
 
@@ -420,11 +420,11 @@ vendor/lib64/libdpmqmihal.so|30a170684219dd589d05ce5b446e73b7501f13e3
 
 # DRM and SEE
 vendor/bin/qseecomd
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
@@ -468,41 +468,41 @@ vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libQTapGLES.so
+vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/hw/vulkan.msm8998.so
+vendor/lib/libC2D2.so
+vendor/lib/libCB.so
+vendor/lib/libOpenCL.so
+vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
-vendor/lib/libC2D2.so
 vendor/lib/libc2d30_bltlib.so
-vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
-vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
-vendor/lib/libRSDriver_adreno.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/hw/vulkan.msm8998.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libCB.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
-vendor/lib64/libC2D2.so
 vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libCB.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
-vendor/lib64/libOpenCL.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/libRSDriver_adreno.so
 
 # Graphics (HDR)
 vendor/etc/hdr_tm_config.xml
@@ -540,9 +540,9 @@ vendor/firmware/a540_zap.elf
 vendor/firmware/a540_zap.mdt
 
 # IMS - from jasmine V11.0.15.0.QDIMIXM
-product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|fe11b3fe75a52e586ca6390adbd1b234f4f565ed
 product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
 product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc3658261ea3c909f03018eea4398f84e
+product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|fe11b3fe75a52e586ca6390adbd1b234f4f565ed
 
 # IMS
 app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk|0e5c3cefdb401c9053d117a9b0e963f203452d87
@@ -585,8 +585,8 @@ vendor/firmware/ipa_fws.b01
 vendor/firmware/ipa_fws.b02
 vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
-vendor/firmware/ipa_fws.mdt
 vendor/firmware/ipa_fws.elf
+vendor/firmware/ipa_fws.mdt
 
 # IRQ balance
 vendor/bin/msm_irqbalance
@@ -599,9 +599,9 @@ vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
 # Media
--vendor/lib/libgpustats.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxVpp.so
+-vendor/lib/libgpustats.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
@@ -694,14 +694,14 @@ vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
-vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnetmgr.so
+vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnlnetmgr.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcmaputils.so
-vendor/lib64/libqsocket.so
 vendor/lib64/libqrtr.so
+vendor/lib64/libqsocket.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
@@ -719,12 +719,12 @@ vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
-vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
+vendor/radio/qcril_database/qcril.db
 
 # Sensors
 vendor/bin/sensors.qti
