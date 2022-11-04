@@ -16,6 +16,24 @@
       "message": "as kind of expected setting it in .mk, only shows \"Razer\"",
       "revId": "fd8038c08d840eec17e9863052d2f7dfbe64d6c3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fac6694_32b91e2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-11-04T09:58:13Z",
+      "side": 1,
+      "message": "bluetooth.device.default_name\u003d\"Razer Phone\"",
+      "parentUuid": "7c4a7281_dd45493e",
+      "revId": "fd8038c08d840eec17e9863052d2f7dfbe64d6c3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
