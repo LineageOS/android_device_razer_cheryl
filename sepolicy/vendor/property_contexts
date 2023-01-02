@@ -1,4 +1,5 @@
 # Camera
+camera.alc.mask                   u:object_r:camera_prop:s0
 cameradaemon.SaveMemAtBoot        u:object_r:camera_prop:s0
 cpp.set.clock                     u:object_r:camera_prop:s0
 disable.cpp.power.collapse        u:object_r:camera_prop:s0

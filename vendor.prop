@@ -105,6 +105,7 @@ ro.vendor.bt.bdaddr_path=/proc/bt_mac
 ro.cp_system_other_odex=1
 
 # Camera
+camera.alc.mask=TRUE
 camera.disable_zsl_mode=1
 vidc.enc.dcvs.extra-buff-count=2
 
