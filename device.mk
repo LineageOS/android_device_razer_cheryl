@@ -161,6 +161,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    dlopen \
     libgui_shim \
     libui_shim.vendor_32
 
