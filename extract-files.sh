@@ -95,6 +95,9 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM3"
             done
             ;;
+        vendor/lib/libmmcamera_interface.so)
+            "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
+            ;;
     esac
 }
 
