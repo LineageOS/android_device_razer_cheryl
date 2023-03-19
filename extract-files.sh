@@ -83,6 +83,9 @@ function blob_fixup() {
         vendor/lib/libfusionLibrary.so)
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
+        vendor/lib/libmmcamera_interface.so)
+            "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
+            ;;
     esac
 }
 
