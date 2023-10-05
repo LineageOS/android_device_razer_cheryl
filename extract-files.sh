@@ -79,9 +79,13 @@ function blob_fixup() {
             ;;
         vendor/lib/libdczoom.so)
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         vendor/lib/libfusionLibrary.so)
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            ;;
+        vendor/lib/libchromaflash.so|vendor/lib/libdualcameraddm.so|vendor/lib/libmmcamera_hdr_gb_lib.so|vendor/lib/liboptizoom.so|vendor/lib/libseemore.so|vendor/lib/libtrueportrait.so)
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         vendor/lib/libmmcamera_interface.so)
             "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
