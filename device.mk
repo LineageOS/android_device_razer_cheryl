@@ -423,7 +423,7 @@ $(call inherit-product, build/target/product/verity.mk)
 # Update this list with what each blob is actually for
 # libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
-    libstdc++.vendor
+    libstdc++_vendor
 
 # Wifi
 PRODUCT_PACKAGES += \
