@@ -419,11 +419,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
-# Verity
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
-PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/bootdevice/by-name/vendor
-$(call inherit-product, build/target/product/verity.mk)
-
 # VNDK
 # Update this list with what each blob is actually for
 # libstdc++: camera.msm8998
