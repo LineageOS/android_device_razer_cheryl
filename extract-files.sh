@@ -71,8 +71,14 @@ function blob_fixup() {
             grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
+        system_ext/lib*/com.qualcomm.qti.ant@1.0.so|system_ext/lib64/lib-imsvt.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
         system_ext/lib64/libdpmframework.so)
             grep -q "libcutils_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcutils_shim.so" "${2}"
+            ;;
+        vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|vendor/bin/ATFWD-daemon|vendor/bin/ims_rtp_daemon|vendor/bin/imsrcsd)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/pm-service)
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
@@ -92,6 +98,9 @@ function blob_fixup() {
             ;;
         vendor/lib/libmmcamera_interface.so)
             "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
+            ;;
+        vendor/lib64/libcne.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
     esac
 }
