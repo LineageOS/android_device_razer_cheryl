@@ -375,7 +375,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bcc
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
 vendor/etc/init/cnd.rc|ff205cff8e00ec6805fd1e19f3ca6ff86700cbb6
-vendor/lib64/libcne.so|1344c4749026a55eee9e3a814c7a71b6733e08fb
+vendor/lib64/libcne.so|1344c4749026a55eee9e3a814c7a71b6733e08fb|8b870f4dcef9f3ce5df5301fd1922cac207ba333
 vendor/lib64/libcneapiclient.so|a99c0ebb180bca17ed05c2ac348ee8e16227a5a3
 vendor/lib64/libcneoplookup.so|99dbc1b2ae37181ae49a72d581fe53abe8207c42
 vendor/lib64/libwms.so|19a39c776120515292dc821599cf504a5fd600b3
