@@ -1,0 +1,17 @@
+# Firmware - from cheryl-user 9 P-MR2-RC001-RZR-N 7083 release-keys.
+
+abl.img;AB
+bluetooth.img;AB
+cmnlib.img;AB
+cmnlib64.img;AB
+devcfg.img;AB
+dsp.img;AB
+hyp.img;AB
+keymaster.img;AB
+mdtp.img;AB
+mdtpsecapp.img;AB
+modem.img;AB
+nvdef.img;AB
+rpm.img;AB
+tz.img;AB
+xbl.img;AB
