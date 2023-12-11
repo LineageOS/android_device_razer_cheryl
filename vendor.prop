@@ -116,6 +116,7 @@ persist.vendor.cne.feature=1
 debug.renderengine.backend=skiaglthreaded
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=1
+ro.hardware.egl=adreno
 ro.opengles.version=196610
 ro.vendor.display.cabl=0
 vendor.display.disable_metadata_dynamic_fps=1
