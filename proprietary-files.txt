@@ -559,7 +559,7 @@ vendor/lib/libvqzip.so
 -vendor/lib64/libgpustats.so
 
 # NFC firmware
-vendor/lib/libpn548ad_fw.so
+vendor/lib/libpn548ad_fw.so:vendor/lib64/libpn548ad_fw.so
 
 # PD mapper - from sld_sprout RKQ1.210607.001/00WW_3_71E
 vendor/bin/pd-mapper|8eb9717d2ee4da59c64ec89a85bf4e384663322b
