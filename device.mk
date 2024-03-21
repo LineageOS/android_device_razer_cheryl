@@ -404,10 +404,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # VNDK
 # Update this list with what each blob is actually for
 # libstdc++: camera.msm8998
