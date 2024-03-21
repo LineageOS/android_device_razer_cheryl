@@ -192,6 +192,10 @@ ro.surface_flinger.protected_contents=true
 # Time services
 persist.vendor.delta_time.enable=true
 
+# USB
+vendor.usb.controller=a800000.dwc3
+vendor.usb.device=a800000.ssusb
+
 # Widevine
 drm.service.enabled=true
 
