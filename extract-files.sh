@@ -85,6 +85,11 @@ function blob_fixup() {
         vendor/lib/libmmcamera_interface.so)
             "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
             ;;
+        vendor/lib64/libril-qc-hal-qmi.so)
+            for v in 1.{0..2}; do
+                sed -i "s|android.hardware.radio.config@${v}.so|android.hardware.radio.c_shim@${v}.so|g" "${2}"
+            done
+            ;;
     esac
 }
 
