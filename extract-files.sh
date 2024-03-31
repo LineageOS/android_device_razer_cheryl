@@ -59,29 +59,14 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        system_ext/etc/init/dpmd.rc)
-            sed -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
-            ;;
-        system_ext/etc/permissions/com.qti.dpmframework.xml | system_ext/etc/permissions/dpmapi.xml)
-            sed -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
-            ;;
-        system_ext/etc/permissions/qcrilhook.xml)
-            sed -i 's|/product/framework/qcrilhook.jar|/system_ext/framework/qcrilhook.jar|g' "${2}"
-            ;;
-        system_ext/lib64/lib-imscamera.so)
-            grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
-            ;;
         system_ext/lib64/lib-imsvideocodec.so)
             grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
-            grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            "${PATCHELF}" --replace-needed "libqdMetaData.so" "libqdMetaData.system.so" "${2}"
             ;;
-        system_ext/lib*/com.qualcomm.qti.ant@1.0.so|system_ext/lib64/lib-imsvt.so)
+        system_ext/lib*/com.qualcomm.qti.ant@1.0.so)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
-        system_ext/lib64/libdpmframework.so)
-            grep -q "libcutils_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcutils_shim.so" "${2}"
-            ;;
-        vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|vendor/bin/ATFWD-daemon|vendor/bin/ims_rtp_daemon|vendor/bin/imsrcsd)
+        vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/lib/hw/camera.msm8998.so)
@@ -99,9 +84,6 @@ function blob_fixup() {
             ;;
         vendor/lib/libmmcamera_interface.so)
             "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
-            ;;
-        vendor/lib64/libcne.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so)
-            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
     esac
 }
