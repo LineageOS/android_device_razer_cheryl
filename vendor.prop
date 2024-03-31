@@ -142,7 +142,6 @@ ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-persist.rcs.supported=0
 
 # Media
 vendor.vidc.dec.120fps.enabled=1
@@ -151,6 +150,9 @@ vendor.vidc.dec.drc.enable=1
 # Media
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
+
+# Network manager
+persist.vendor.data.iwlan.enable=true
 
 # OEM Unlock
 ro.oem_unlock_supported=1
@@ -165,6 +167,7 @@ ro.vendor.qti.sys.fw.bg_apps_limit=38
 persist.vendor.data.mode=concurrent
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.enableadvancedscan=false
 persist.vendor.radio.mt_sms_ack=30
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
@@ -172,8 +175,10 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=20
 ro.vendor.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=1
-vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 vendor.voice.path.for.pcm.voip=false
+
+# RCS
+persist.rcs.supported=1
 
 # Sensors
 persist.vendor.sensors.direct_channel=true
