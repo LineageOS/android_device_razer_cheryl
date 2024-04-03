@@ -1,3 +1,6 @@
+# Bluetooth
+persist.vendor.bt.address                                     u:object_r:vendor_bluetooth_prop:s0
+
 # Camera
 camera.alc.mask                   u:object_r:camera_prop:s0
 cameradaemon.SaveMemAtBoot        u:object_r:camera_prop:s0
