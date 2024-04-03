@@ -170,6 +170,7 @@ on boot
     chmod 0660 /sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input1/wake_gesture
 
     start vendor.qcrild
+    start vendor.dataqti
 
 on property:sys.boot_completed=1
     # Used by sound trigger HAL
