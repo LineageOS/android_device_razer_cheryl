@@ -278,7 +278,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.cheryl
+    android.hardware.light-service.cheryl
 
 # Lineage Health
 PRODUCT_PACKAGES += \
