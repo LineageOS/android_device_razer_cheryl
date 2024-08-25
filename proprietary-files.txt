@@ -53,9 +53,9 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 
 # Bluetooth ANT
 system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so
--system/lib/libantradio.so:system_ext/lib/libantradio.so
+system/lib/libantradio.so:system_ext/lib/libantradio.so
 system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
--system/lib64/libantradio.so:system_ext/lib64/libantradio.so
+system/lib64/libantradio.so:system_ext/lib64/libantradio.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
@@ -502,7 +502,7 @@ vendor/lib/hw/hwcomposer.msm8998.so
 vendor/lib/libqseed3.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
--vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libsdm-disp-vndapis.so
 vendor/lib/libsdmcore.so
 vendor/lib/libsdmextension.so
 vendor/lib/libsdmutils.so
@@ -511,7 +511,7 @@ vendor/lib64/hw/hwcomposer.msm8998.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
--vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libsdmutils.so
@@ -552,11 +552,11 @@ vendor/lib/libsmwrapper.so
 # Media
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxVpp.so
--vendor/lib/libgpustats.so
+vendor/lib/libgpustats.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
--vendor/lib64/libgpustats.so
+vendor/lib64/libgpustats.so
 
 # NFC firmware
 vendor/lib/libpn548ad_fw.so:vendor/lib64/libpn548ad_fw.so
