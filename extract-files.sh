@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2023 The LineageOS Project
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -43,7 +43,8 @@ while [ "${#}" -gt 0 ]; do
                 KANG="--kang"
                 ;;
         -s | --section )
-                SECTION="${2}"; shift
+                SECTION="${2}"
+                shift
                 CLEAN_VENDOR=false
                 ;;
         * )
@@ -60,37 +61,56 @@ fi
 function blob_fixup() {
     case "${1}" in
         system_ext/lib64/lib-imsvideocodec.so)
+            [ "$2" = "" ] && return 0
             grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
             "${PATCHELF}" --replace-needed "libqdMetaData.so" "libqdMetaData.system.so" "${2}"
             ;;
         system_ext/lib*/com.qualcomm.qti.ant@1.0.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/lib/hw/camera.msm8998.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             ;;
         vendor/lib/libdczoom.so)
+            [ "$2" = "" ] && return 0
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         vendor/lib/libfusionLibrary.so)
+            [ "$2" = "" ] && return 0
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
         vendor/lib/libchromaflash.so|vendor/lib/libdualcameraddm.so|vendor/lib/libmmcamera_hdr_gb_lib.so|vendor/lib/liboptizoom.so|vendor/lib/libseemore.so|vendor/lib/libtrueportrait.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         vendor/lib/libmmcamera_interface.so)
+            [ "$2" = "" ] && return 0
             "${SIGSCAN}" -p "01 28 18 BF" -P "FF" -f "${2}"
             ;;
         vendor/lib64/libril-qc-hal-qmi.so)
+            [ "$2" = "" ] && return 0
             for v in 1.{0..2}; do
                 sed -i "s|android.hardware.radio.config@${v}.so|android.hardware.radio.c_shim@${v}.so|g" "${2}"
             done
             ;;
+        *)
+            return 1
+            ;;
+
     esac
+
+    return 0
+}
+
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
 }
 
 # Initialize the helper
