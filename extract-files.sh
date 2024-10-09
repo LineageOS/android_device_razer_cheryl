@@ -2,7 +2,6 @@
 #
 # SPDX-FileCopyrightText: 2016 The CyanogenMod Project
 # SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
-#
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -16,6 +15,10 @@ MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
+
+# If XML files don't have comments before the XML header, use this flag
+# Can still be used with broken XML files by using blob_fixup
+export TARGET_DISABLE_XML_FIXING=true
 
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
@@ -33,23 +36,23 @@ SECTION=
 
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
-        --only-firmware )
-                ONLY_FIRMWARE=true
-                ;;
-        -n | --no-cleanup )
-                CLEAN_VENDOR=false
-                ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"
-                shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
+        --only-firmware)
+            ONLY_FIRMWARE=true
+            ;;
+        -n | --no-cleanup)
+            CLEAN_VENDOR=false
+            ;;
+        -k | --kang)
+            KANG="--kang"
+            ;;
+        -s | --section)
+            SECTION="${2}"
+            shift
+            CLEAN_VENDOR=false
+            ;;
+        *)
+            SRC="${1}"
+            ;;
     esac
     shift
 done
@@ -86,7 +89,12 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
-        vendor/lib/libchromaflash.so|vendor/lib/libdualcameraddm.so|vendor/lib/libmmcamera_hdr_gb_lib.so|vendor/lib/liboptizoom.so|vendor/lib/libseemore.so|vendor/lib/libtrueportrait.so)
+        vendor/lib/libchromaflash.so | \
+            vendor/lib/libdualcameraddm.so | \
+            vendor/lib/libmmcamera_hdr_gb_lib.so | \
+            vendor/lib/liboptizoom.so | \
+            vendor/lib/libseemore.so | \
+            vendor/lib/libtrueportrait.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
@@ -103,7 +111,6 @@ function blob_fixup() {
         *)
             return 1
             ;;
-
     esac
 
     return 0
