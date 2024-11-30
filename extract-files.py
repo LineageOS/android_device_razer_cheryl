@@ -24,6 +24,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti',
     ): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
+    'system_ext/lib64/lib-imscamera.so': blob_fixup()
+        .add_needed('libgui_shim.so'),
     'system_ext/lib64/lib-imsvideocodec.so': blob_fixup()
         .add_needed('libgui_shim.so')
         .replace_needed('libqdMetaData.so', 'libqdMetaData.system.so'),
