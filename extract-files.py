@@ -22,6 +22,8 @@ blob_fixups: blob_fixups_user_type = {
         'system_ext/lib/com.qualcomm.qti.ant@1.0.so',
         'system_ext/lib64/com.qualcomm.qti.ant@1.0.so',
         'vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti',
+        'vendor/lib64/com.qualcomm.qti.ant@1.0.so',
+        'vendor/lib64/vendor.qti.hardware.fm@1.0.so',
     ): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'system_ext/lib64/lib-imscamera.so': blob_fixup()
