@@ -37,12 +37,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/libfusionLibrary.so': blob_fixup()
         .add_needed('libui_shim.so'),
     (
-        'vendor/lib/libchromaflash.so',
         'vendor/lib/libdualcameraddm.so',
         'vendor/lib/libmmcamera_hdr_gb_lib.so',
-        'vendor/lib/liboptizoom.so',
-        'vendor/lib/libseemore.so',
-        'vendor/lib/libtrueportrait.so',
     ): blob_fixup()
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'vendor/lib/libmmcamera_interface.so': blob_fixup()
