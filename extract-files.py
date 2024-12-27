@@ -35,6 +35,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libui_shim.so')
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'vendor/lib/libfusionLibrary.so': blob_fixup()
+        .fix_soname()
         .add_needed('libui_shim.so'),
     (
         'vendor/lib/libdualcameraddm.so',
