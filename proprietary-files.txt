@@ -3,7 +3,6 @@
 
 # Current blobs with ELF checks disabled:
 # libOmxVpp depends on libmm-omxcore, which is a gnu makefile target
-# libantradio depends on unresolved symbol jniThrowException@LIBNATIVEHELPER_1
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
 # libmmcamera2_cpp_module, libmmcamera2_iface_modules, libmmcamera2_imglib_modules, libmmcamera2_is,
 # libmmcamera2_isp_modules, libmmcamera2_mct, libmmcamera2_stats_algorithm, libmmcamera2_stats_lib,
@@ -62,9 +61,9 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 
 # Bluetooth ANT
 system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so
-system/lib/libantradio.so:system_ext/lib/libantradio.so;DISABLE_CHECKELF
+system/lib/libantradio.so:system_ext/lib/libantradio.so
 system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
-system/lib64/libantradio.so:system_ext/lib64/libantradio.so;DISABLE_CHECKELF
+system/lib64/libantradio.so:system_ext/lib64/libantradio.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
