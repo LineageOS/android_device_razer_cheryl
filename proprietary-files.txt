@@ -2,7 +2,6 @@
 ## are from cheryl-user 9 P-MR2-RC001-RZR-N 7083 release-keys.
 
 # Current blobs with ELF checks disabled:
-# libOmxVpp depends on libmm-omxcore, which is a gnu makefile target
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
 # libmmcamera2_cpp_module, libmmcamera2_iface_modules, libmmcamera2_imglib_modules, libmmcamera2_is,
 # libmmcamera2_isp_modules, libmmcamera2_mct, libmmcamera2_stats_algorithm, libmmcamera2_stats_lib,
@@ -558,7 +557,7 @@ vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
 # Media
-vendor/lib/libOmxVpp.so;DISABLE_CHECKELF
+vendor/lib/libOmxVpp.so
 vendor/lib/libgpustats.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
