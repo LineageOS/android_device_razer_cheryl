@@ -14,8 +14,9 @@
 // limitations under the License.
 //
 
-cc_library {
-    name: "bootctrl.msm8998",
-    defaults: ["bootctrl_hal_defaults"],
+cc_library_shared {
+    name: "android.hardware.boot@1.2-impl-qti",
+    stem: "android.hardware.boot@1.0-impl-1.2-qti",
+    defaults: ["android.hardware.boot@1.2-impl-qti_defaults"],
     static_libs: ["libgptutils.qti"],
 }
