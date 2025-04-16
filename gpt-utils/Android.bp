@@ -14,8 +14,26 @@
 // limitations under the License.
 //
 
+
 cc_library {
-    name: "bootctrl.msm8998",
-    defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils.cheryl"],
+    name: "libgptutils.cheryl",
+    vendor: true,
+    recovery_available: true,
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libz",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    srcs: [
+        "gpt-utils.cpp",
+    ],
+    owner: "qti",
+    header_libs: [
+        "generated_kernel_headers",
+    ],
+    export_include_dirs: ["."],
 }
