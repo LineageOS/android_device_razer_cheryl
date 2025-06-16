@@ -61,9 +61,6 @@ AB_OTA_PARTITIONS += \
     system \
     vendor
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := cheryl
 
